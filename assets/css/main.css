@@ -185,6 +185,10 @@ a:not(.button):not(.component--cta):not(.menu-link):after {
 a:not(.button):not(.component--cta):not(.menu-link):hover:after {
   animation-name: slideAcross;
 }
+a:hover {
+  color: #e94f37;
+  text-decoration: underline;
+}
 
 @keyframes slideAcross {
   0% {
@@ -652,6 +656,7 @@ form .inputWrapper {
 #app-header .menu-header li a:hover {
   color: #e94f37;
   transform: translateX(10px);
+  text-decoration: none;
 }
 #app-header .mobile-menu-toggle {
   display: flex;
@@ -1348,6 +1353,7 @@ main .wpforms-confirmation-container-full p strong {
 .component--cta:hover {
   color: #fff;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
 }
 .component--cta:hover::before {
   transform: translate(-50%, -50%) scale(1);
@@ -1611,99 +1617,93 @@ main .wpforms-confirmation-container-full p strong {
 }
 
 .block--listing {
-  padding: 80px 0 80px;
-  background-color: #FFF;
-  color: #181a20;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-@media (max-width: 992px) {
-  .block--listing {
-    padding: 60px 0 60px;
-  }
-  .block--listing .slick-slide {
-    height: inherit;
-  }
-  .block--listing .slick-track {
-    display: flex;
-  }
-}
-.block--listing .listing--content {
-  width: 600px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-.block--listing .listing--wrapper {
+  padding: 60px 0;
   position: relative;
-  width: 100%;
+  overflow: hidden;
 }
-.block--listing .listing--wrapper.grid {
+.block--listing a:hover {
+  text-decoration: none;
+}
+.block--listing .content-wrapper {
+  text-align: center;
+  background-color: transparent;
+  box-shadow: none;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.block--listing .listing-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 60px 72px;
+  gap: 6rem 2rem;
+  padding-top: 40px;
 }
-@media (max-width: 1200px) {
-  .block--listing .listing--wrapper.grid {
+@media (max-width: 992px) {
+  .block--listing .listing-wrapper {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5vw 3vw;
+    gap: 2rem;
   }
 }
-@media (max-width: 992px) {
-  .block--listing .listing--wrapper.grid {
-    padding-top: 60px;
+@media (max-width: 600px) {
+  .block--listing .listing-wrapper {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
-.block--listing .listing--wrapper.grid .card, .block--listing .listing--wrapper.grid .image, .block--listing .listing--wrapper.grid .widget {
-  width: 100%;
+.block--listing .listing-wrapper .portfolio-item {
+  background: rgba(35, 41, 70, 0.1);
+  border-radius: 1.2rem;
+  padding: 0rem;
+  box-shadow: 0 2px 12px rgba(70, 176, 229, 0.1);
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 0px;
+  overflow: hidden;
 }
-.block--listing .listing--wrapper.flex {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  width: 100%;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.block--listing .listing-wrapper .portfolio-item img {
+  transition: transform 0.15s ease-in-out;
 }
-@media (max-width: 992px) {
-  .block--listing .listing--wrapper.flex {
-    padding-top: 60px;
-    flex-direction: column;
+.block--listing .listing-wrapper .portfolio-item .project-bg {
+  transition: background 0.3s ease-in-out;
+}
+.block--listing .listing-wrapper .portfolio-item .project-bg .portfolio-content strong, .block--listing .listing-wrapper .portfolio-item .project-bg .portfolio-content p {
+  transition: color 0.3s ease-in-out;
+}
+.block--listing .listing-wrapper .portfolio-item:hover .project-bg {
+  background: #232946;
+}
+.block--listing .listing-wrapper .portfolio-item:hover .portfolio-content strong, .block--listing .listing-wrapper .portfolio-item:hover .portfolio-content p {
+  color: #FFF;
+}
+.block--listing .listing-wrapper .portfolio-item:hover .portfolio-item-inner img {
+  transform: translateY(-8px) scale(1.04);
+}
+@media (max-width: 600px) {
+  .block--listing .listing-wrapper .portfolio-item-inner p {
+    padding: 0 2rem;
   }
 }
-.block--listing .listing--wrapper.slider .slick-arrow i {
-  color: #000;
-  background-color: red;
+.block--listing .listing-wrapper .portfolio-item img {
+  width: 100%;
+  max-height: 300px;
+  min-height: 300px;
+  object-fit: cover;
+  /* border-radius: 0.9rem; */
+  margin-bottom: 1rem;
 }
-.block--listing .slick-arrow {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  border: none;
-  color: #000;
-  width: max-content;
-  height: fit-content;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 99;
+.block--listing .listing-wrapper .portfolio-item .portfolio-content {
+  padding: 2rem 0 6rem;
 }
-.block--listing .slick-prev {
-  left: 0;
-  border-radius: 10px 0px 0px 10px;
-  padding: 10px 20px 10px 15px;
+.block--listing .listing-wrapper .portfolio-item .portfolio-content h3 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #e94f37;
+  margin-bottom: 0.5rem;
 }
-.block--listing .slick-next {
-  right: 0;
-  border-radius: 0px 10px 10px 0px;
-  padding: 10px 20px 10px 15px;
+.block--listing .listing-wrapper .portfolio-item .portfolio-content .description {
+  color: #e94f37;
+  font-size: 1.6rem;
 }
 
 .block--content {

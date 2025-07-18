@@ -86,7 +86,7 @@ function wpdocs_theme_setup(){
 // Plural, Singular, desc, has_tax, has_single, dashicon, archive
 function build_post_type(){
     $post_types = array(
-        // array( 'Brands', 'Brand', '', false, false, 'networking', false ),
+        array( 'Portfolio', 'Portfolio', '', false, false, 'networking', false ),
         // array( 'Careers', 'Careers', '', true, true, 'businessperson', false ),
         // array( 'Team', 'Team', '', true, true, 'groups', false ),
     );

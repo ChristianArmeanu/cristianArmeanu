@@ -23,6 +23,10 @@ a {
             animation-name: slideAcross;
         }
     }
+    &:hover {
+        color: $c--secondary;
+        text-decoration: underline;
+    }
 }
 
 @keyframes slideAcross {

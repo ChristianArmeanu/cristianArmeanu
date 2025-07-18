@@ -1,97 +1,104 @@
 @use '../../assets/css/config' as *; 
 
 .block--listing {
-    padding: 80px 0 80px;
-    background-color: $c--white;
-    color: $c--black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
 
-    @media (max-width: 992px){
-        padding: 60px 0 60px;
-
-        .slick-slide { height: inherit; }
-        .slick-track { display: flex; }
+    a:hover{
+        text-decoration: none;
     }
     
-    .listing--content {
-        width: 600px;
-        max-width: 100%;
-        margin: 0 auto;
+    .content-wrapper{
         text-align: center;
+        background-color: transparent;
+        box-shadow: none;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
     }
-   
-    .listing--wrapper {
-      position: relative;
-      width: 100%;
-        &.grid{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
-            grid-gap: 60px 72px;
-    
-            @media (max-width: 1200px){
-                grid-template-columns: repeat(2, 1fr);
-             
-                grid-gap: 5vw 3vw;
+
+    .listing-wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6rem 2rem;
+        padding-top: 40px;
+        @media(max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        @media(max-width: 600px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        .portfolio-item {
+            background: rgba($c--primary, 0.1);  ;
+            border-radius: 1.2rem;
+            padding: 0rem;
+            box-shadow: 0 2px 12px rgba(70,176,229,0.10);
+            text-align: center;
+            position: relative;
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+            padding-bottom: 0px;
+            overflow: hidden;
+            img{
+                transition: transform 0.15s ease-in-out;
             }
-            @media (max-width: 992px){
-                padding-top: 60px;
-                grid-template-columns: 1fr;
+            .project-bg{
+                transition: background 0.3s ease-in-out;
+                .portfolio-content{
+                    strong, p{
+                        transition: color 0.3s ease-in-out;
+                    }
+                }
             }
-            .card, .image, .widget{
-                width: 100%;
+            &:hover{
+                .project-bg{
+                    background: rgba($c--primary, 1);
+                }
+                .portfolio-content{
+                    strong, p{
+                        color: $c--white;
+                    }
+                }
+                .portfolio-item-inner{
+                    img{
+                        transform: translateY(-8px) scale(1.04);
+                    }
+
+                }
             }
         }
-        &.flex{
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
+        .portfolio-item-inner {
+            @media(max-width: 600px) {
+                p{
+                    padding: 0 2rem;
+                }
+            }
+        }
+        .portfolio-item img {
             width: 100%;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            @media (max-width: 992px){
-                padding-top: 60px;
-                flex-direction: column;
-            }
-            
+            max-height: 300px;
+            min-height: 300px;
+            object-fit: cover;
+            /* border-radius: 0.9rem; */
+            margin-bottom: 1rem;
         }
-        &.slider{
-            .slick-arrow i{ 
-                color: #000;
-                background-color: red;
+        .portfolio-item{
+            .portfolio-content{
+                padding: 2rem 0 6rem;
+                h3 {
+                    margin-top: 0;
+                    font-size: 2rem;
+                    color: $c--secondary;
+                    margin-bottom: 0.5rem;
+                }
+                .description{
+                    color: $c--secondary;
+                    font-size: 1.6rem;
+                }
             }
-        }
-    }
-    .slick-arrow{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        border: none;
-        color: #000;
-        width: max-content;
-        height: fit-content;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 99;
-       
-        
-    }
-    .slick-prev{
-        left: 0;
-        border-radius: 10px 0px 0px 10px;
-        padding: 10px 20px 10px 15px;
-    }
-    .slick-next{
-        right: 0;
-        border-radius: 0px 10px 10px 0px;
-        padding: 10px 20px 10px 15px;
+        } 
     }
 
 }
