@@ -1,0 +1,7 @@
+@use 'config' as *;
+
+#wpadminbar {
+    @media (max-width: 992px){
+        display: none !important;
+    }
+}

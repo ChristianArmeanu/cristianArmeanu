@@ -1,0 +1,106 @@
+@use "../../assets/css/config" as *;
+
+.block--hero,
+.hero-slider,
+.slider {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #000;
+  color: $c--white;
+  position: relative;
+  overflow: hidden;
+  height: 890px;
+  width: 100%;
+  @media(max-width: 1050px){
+    height: 500px;
+  }
+
+  * {
+    color: inherit;
+  }
+
+  .content-wrapper{
+    padding: 35vh 20vw 0 0;
+    @media(max-width: 1440px){
+      padding: 35vh 15vw 0vh 0;
+    }
+    @media(max-width: 1050px){
+      padding: 20vh 20vw 0 0;
+    }
+    @media(max-height: 800px){
+      padding: 40vh 10vw 0 0;
+    }
+  }
+
+  .layer{
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000007a;
+    z-index: 9;
+}
+    &.video{
+        .content-wrapper{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding:0;
+            transform: translate(-50%, -50%);
+            color: #000;
+            @media(max-width: 1440px){
+              padding: 35vh 15vw 0vh 0;
+            }
+            @media(max-width: 1050px){
+              padding: 20vh 20vw 0 0;
+            }
+            @media(max-height: 800px){
+              padding: 40vh 10vw 0 0;
+            }
+        }
+    }
+    &.video-slider{
+        .content-wrapper{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding:0;
+            transform: translate(-50%, -50%);
+            color: #000;
+            @media(max-width: 1440px){
+              padding: 35vh 15vw 0vh 0;
+            }
+            @media(max-width: 1050px){
+              padding: 20vh 20vw 0 0;
+            }
+            @media(max-height: 800px){
+              padding: 40vh 10vw 0 0;
+            }
+        }
+    }
+
+}
+
+.slider-1{
+  position: absolute;
+  z-index: 999999999;
+  .content-wrapper {
+    padding: 35vh 15vw 0vh 0;
+    h1 {
+      text-align: left;
+      color: #fff;
+     
+    }
+    p{
+      color: #fff;
+    }
+    @media(max-width: 1440px){
+      padding: 35vh 15vw 0vh 0;
+    }
+    @media(max-width: 1050px){
+      padding: 20vh 15vw 0 0;
+    }
+    @media(max-height: 800px){
+      padding: 40vh 10vw 0 0;
+    }
+  }
+}
