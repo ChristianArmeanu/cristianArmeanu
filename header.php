@@ -23,7 +23,7 @@
             }
         ?>
         <header id="app-header">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-6 col-md-4">
                     <a aria-label="Visit our Homepage" title="<?php echo get_bloginfo('name'); ?>" href="<?php echo get_bloginfo('wpurl'); ?>">

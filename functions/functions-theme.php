@@ -15,7 +15,7 @@ function setup_scripts() {
 	wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array( 'jquery' ), false, true);
     wp_enqueue_script( 'aos-js', '//unpkg.com/aos@2.3.1/dist/aos.js', array(), false, true);
 	wp_enqueue_script( 'custom-js', $assets['build'] . 'main.js', array( 'jquery', 'slick-js', 'aos-js' ), false, true);
-    wp_enqueue_script( 'font-awesome-kit', 'https://kit.fontawesome.com/83d4c02c61.js', [], null );
+    //wp_enqueue_script( 'font-awesome-kit', 'https://kit.fontawesome.com/83d4c02c61.js', [], null );
 
     // Font Awesome local
     wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css' );

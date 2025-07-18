@@ -1,0 +1,32 @@
+@use "config" as *;
+
+.social-media {
+  display: block;
+  list-style-type: none;
+
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 0 8px;
+    padding-bottom: 20px;
+  }
+
+  i {
+    font-size: 30px;
+    color: $c--primary;
+    transition: all ease 0.3s;
+
+    &:hover {
+      color: $c--primary;
+      opacity: 0.8;
+    }
+  }
+
+  @media (max-width: 992px) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+}
