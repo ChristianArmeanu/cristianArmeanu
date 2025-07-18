@@ -85,6 +85,8 @@
 
 <?php if ($type == 'video'): ?>
     <section id='<?php echo $block['id']; ?>' class='block--hero video' data-aos="fade">
+    <div class="layer">
+
         <div class="video-wrapper">
             <?php if ($video): ?>
                 <video autoplay muted loop>
@@ -93,18 +95,22 @@
                 </video>
             <?php endif; ?>
             <div class="content-wrapper">
-                <?php echo $content; ?>
+                <div class="hero-content">
+                    <?php echo $content; ?>
+                </div>
+
                 <?php
-                if (count($cta_array) > 0) {
-                    echo '<div class="cta--holder">';
-                    foreach ($cta_array as $cta)
-                        includeComponent('cta', true, array('text' => $cta['cta_text'], 'url' => $cta['cta_url'], 'icon' => $cta['cta_icon']));
-                    echo '</div>';
-                }
+                    if (count($cta_array) > 0) {
+                        echo '<div class="cta--holder">';
+                        foreach ($cta_array as $cta)
+                            includeComponent('cta', true, array('text' => $cta['cta_text'], 'url' => $cta['cta_url'], 'icon' => $cta['cta_icon']));
+                        echo '</div>';
+                    }
                 ?>
             </div>
+
         </div>
-        
+    </div>
     </section>
 <?php endif; ?>
 

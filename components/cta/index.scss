@@ -15,8 +15,43 @@
 }
 
 .component--cta {
-    // font-size: 1.4rem;
+    position: relative;
+    overflow: hidden;
     margin-right: 48px;
+    background-color: $c--primary;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: $c--white;
+    cursor: pointer;
+    transition: color 0.3s, box-shadow 0.3s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 200%;
+        height: 200%;
+        background-color: #e94f37;
+        //order-radius: 50%;
+        transition: transform 0.5s ease;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #fff;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+        &::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    // asigură textul deasupra background-ului animat
+    position: relative;
+    z-index: 1;
 
     &:last-of-type { margin-right: 0; }
 

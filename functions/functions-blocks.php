@@ -7,6 +7,7 @@
 function theme_acf_init() {
     if(function_exists('acf_register_block')){
         //[!GULP]
+		generateBlock( 'Intro', 'intro', 'introduction block', '' );
 		generateBlock( 'Media', 'media', '', 'editor-video' );
 		generateBlock( 'Listing', 'listing', '', 'list-view' );
 		generateBlock( 'Content', 'content', '', 'align-left' );

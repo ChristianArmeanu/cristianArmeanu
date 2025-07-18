@@ -1,0 +1,47 @@
+@use '../../assets/css/config' as *; 
+
+.block--intro {
+    overflow: hidden;
+    position: relative;
+    .content-wrapper{
+        text-align: center;
+        background-color: transparent;
+        box-shadow: none;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .skills-wrapper {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.3rem;
+            font-size: 1.1rem;
+            list-style: none;
+            justify-content: center;
+            li {
+                background: #f1f7fd;
+                padding: 0.4em 1em;
+                border-radius: 999px;
+                box-shadow: 0 1px 4px rgba(37,84,212,0.05);
+                font-weight: 500;
+            }
+        }
+    }
+    .bg-color{
+        padding: 60px 0;
+        border-radius: 20px;
+        &.primary{
+            background-color: $c--primary;
+        }
+        &.secondary{
+            background-color: $c--secondary;
+            h2{
+                color: $c--white;
+            }
+        }
+    }
+
+
+}

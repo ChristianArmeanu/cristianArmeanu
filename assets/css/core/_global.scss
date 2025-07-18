@@ -14,6 +14,26 @@ html, body {
 	font-size: 10px;
     line-height: 10px;
     scroll-behavior: smooth;
+     // scrollbar styles width and color and background
+    // Parent selector (ex: body, .container, etc.)
+    &::-webkit-scrollbar {
+      width: 8px;
+      background: #f5f7fa; // Culoarea track-ului (fundalul)
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #353877; // Culoarea barei efective (thumb)
+      border-radius: 6px;  // Rotunjire, opțional
+    }
+
+    // Optional: border/hover efect
+    &::-webkit-scrollbar-thumb:hover {
+      background: #2a2d5e; // Un pic mai închis la hover, dacă vrei
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f5f7fa; // Asigură că track-ul are culoarea dorită
+    }
 }
 
 
@@ -45,7 +65,7 @@ tbody, td, tfoot, th, thead, tr{
 
 .container {
     @media (min-width: 1400px){
-        max-width: 1640px;
+        max-width: 1860px;
         padding: 0 48px;
     }
     @media (max-width: 1399px){
@@ -60,7 +80,7 @@ tbody, td, tfoot, th, thead, tr{
 
 .container-fluid {
     padding: 0 48px;
-
+    
     @media (max-width: 992px){
         padding: 0 24px;
     }
@@ -72,10 +92,10 @@ body:not(.home) .page-content {
 
 main {
     section { 
-        margin-bottom: 80px;
+        margin-bottom: 0px;
 
         @media (max-width: 992px){
-           margin-bottom: 30px;
+           margin-bottom: 0px;
         }
 
 

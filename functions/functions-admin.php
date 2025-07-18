@@ -70,7 +70,7 @@ function disable_emojis() {
 
   // Change the Admin login logo
 function admin_logo(){
-	$logo = 'https://authenticity.digital/assets/img/cristian-logo.png';
+	$logo = 'https://cristianarmeanu.com/assets/img/screenshot.png';
 	echo '<style>';
 		echo '
 		html, body {

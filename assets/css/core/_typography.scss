@@ -1,7 +1,7 @@
 @use '../config' as *;
 
 a {
-    color: inherit;
+    color: $c--secondary;
     text-decoration: none;
     transition: all 0.15s ease-out;
     position: relative;
@@ -55,6 +55,11 @@ p, li, span, small, a, blockquote, td, address {
     font-weight: 300;
 }
 
+p, li,span, small, blockquote, td, address, strong{
+    color: $c--black;
+}
+
+
 h1 {
     font-size: 4.8rem;
     margin-bottom: 36px;
@@ -72,7 +77,9 @@ h1 {
 h2 { 
     font-size: 3.8rem; 
     margin-bottom: 24px;
-
+    color: $c--secondary;
+    font-weight: bold;
+    text-transform: uppercase;
     @media (max-width: 768px){
         font-size: 4.8vw;
         line-height: 1.6;
@@ -112,7 +119,6 @@ ul + h4 {
 p, li, a, span, blockquote, address {
     font-size: 1.8rem;    
     margin-bottom: 12px;
-    color: $c--dark-grey;
 
     @media (max-width: 568px){
         font-size: 4vw;
@@ -157,7 +163,9 @@ figure.wp-block-image {
         margin: 0;
     }
 }
-
+strong{
+    font-weight: bold;
+}
 small {
     * {
         font-size: inherit;

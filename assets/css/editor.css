@@ -20,6 +20,35 @@
     right: -4px;
   }
 }
+.block--intro {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+.block--intro:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #181a20;
+  z-index: 1;
+}
+.block--intro:after {
+  content: "Intro";
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+}
+
 .block--formal {
   position: relative;
   height: 100px;
@@ -32,7 +61,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111;
+  background-color: #181a20;
   z-index: 1;
 }
 .block--formal:after {
@@ -40,7 +69,7 @@
   font-size: 22px;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "Lato", serif;
+  font-family: "Space Grotesk", sans-serif;
   color: #FFF;
   position: absolute;
   top: 50%;
@@ -61,7 +90,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111;
+  background-color: #181a20;
   z-index: 1;
 }
 .block--media:after {
@@ -69,7 +98,7 @@
   font-size: 22px;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "Lato", serif;
+  font-family: "Space Grotesk", sans-serif;
   color: #FFF;
   position: absolute;
   top: 50%;
@@ -90,7 +119,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111;
+  background-color: #181a20;
   z-index: 1;
 }
 .block--listing:after {
@@ -98,7 +127,7 @@
   font-size: 22px;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "Lato", serif;
+  font-family: "Space Grotesk", sans-serif;
   color: #FFF;
   position: absolute;
   top: 50%;
@@ -119,7 +148,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111;
+  background-color: #181a20;
   z-index: 1;
 }
 .block--content:after {
@@ -127,7 +156,7 @@
   font-size: 22px;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "Lato", serif;
+  font-family: "Space Grotesk", sans-serif;
   color: #FFF;
   position: absolute;
   top: 50%;
@@ -148,7 +177,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111;
+  background-color: #181a20;
   z-index: 1;
 }
 .block--breadcrumbs:after {
@@ -156,7 +185,7 @@
   font-size: 22px;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "Lato", serif;
+  font-family: "Space Grotesk", sans-serif;
   color: #FFF;
   position: absolute;
   top: 50%;
@@ -177,7 +206,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111;
+  background-color: #181a20;
   z-index: 1;
 }
 .block--hero:after {
@@ -185,7 +214,7 @@
   font-size: 22px;
   line-height: 1.4;
   font-weight: 700;
-  font-family: "Lato", serif;
+  font-family: "Space Grotesk", sans-serif;
   color: #FFF;
   position: absolute;
   top: 50%;
