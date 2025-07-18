@@ -91,8 +91,10 @@
             <?php if ($video): ?>
                 <video autoplay muted loop>
                     <source src="<?php echo $video['url']; ?>" type="video/mp4">
+                    <track src="<?php echo get_template_directory_uri(); ?>/assets/img/captions.vtt" kind="captions" srclang="en" label="English Captions">
                     Your browser does not support the video tag.
                 </video>
+
             <?php endif; ?>
             <div class="content-wrapper">
                 <div class="hero-content">

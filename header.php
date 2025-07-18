@@ -31,14 +31,13 @@
                     </a>
 
                     </div>
-                    <div class="col-6 col-lg-8 col-xl-8 d-flex justify-content-end align-self-center">
+                    <div class="col-6 col-md-8 col-lg-8 col-xl-8 d-flex justify-content-end align-self-center">
                     <div class="menu-header">
                         <ul class="menu">
-                            <li><a class="links" href="#hero">Home</a></li>
-                            <li><a class="links" href="#about">About</a></li>
-                            <li><a class="links" href="#skills">Skills</a></li>
-                            <li><a class="links" href="#portfolio">Portfolio</a></li>
-                            <li><a class="links" href="#contact">Contact</a></li>
+                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>">Home</a></li>
+                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>/about">About</a></li>
+                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>/portfolio">Portfolio</a></li>
+                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>/contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="mobile-menu-toggle">

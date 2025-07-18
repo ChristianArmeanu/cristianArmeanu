@@ -112,17 +112,6 @@ jQuery(function(){
     });
   
     ////////////////////////////////
-
-
-    //Cookie policy
-    if(localStorage.getItem('cookie'))
-        jQuery('#cookie').remove()
-
-    jQuery('#cookie button').on('click', function(e){
-        e.preventDefault()
-        localStorage.setItem('cookie', 1)
-        jQuery('#cookie').toggleClass('accepted pending')
-    })
 })
 
 
@@ -156,8 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Intro 
 
+const intro = document.getElementById('intro');
+
+if (intro) {
   setTimeout(function() {
-    const intro = document.getElementById('intro');
     intro.classList.add('fade-out');
     setTimeout(() => {
       intro.style.display = 'none';
@@ -165,10 +156,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 750);
   }, 2400);
 
-  document.getElementById('intro').addEventListener('click', function() {
+  intro.addEventListener('click', function() {
     this.classList.add('fade-out');
     setTimeout(() => {
       this.style.display = 'none';
       document.body.style.overflow = 'auto';
     }, 700);
   });
+}
+
+
+
+
+
+// Enquiry Popup
+
+
+jQuery(document).ready(function($){
+  $('a[href="#enquiry"]').on('click', function(e){
+    e.preventDefault();
+    console.log('Deschidem pop-up');  // pentru test
+    openEnquiryPopup();
+  });
+
+  if (window.location.hash === '#enquiry') {
+    openEnquiryPopup();
+  }
+
+  $('#popup-overlay, #popup-enquiry .close-popup').on('click', function(){
+    closeEnquiryPopup();
+  });
+
+  $(document).on('keyup', function(e) {
+    if (e.key === "Escape") {
+      closeEnquiryPopup();
+    }
+  });
+
+  function openEnquiryPopup() {
+    $('#popup-overlay').addClass('active');
+    $('#popup-enquiry').addClass('active');
+  }
+
+  function closeEnquiryPopup() {
+    $('#popup-overlay').removeClass('active');
+    $('#popup-enquiry').removeClass('active');
+  }
+});

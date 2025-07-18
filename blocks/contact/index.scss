@@ -1,0 +1,140 @@
+@use '../../assets/css/config' as *; 
+
+.block--contact {
+    padding: 40px 0;
+    overflow: hidden;
+    position: relative;
+    .content{
+        text-align: center;
+        width: 100%;
+        max-width: 550px;
+        margin: 0 auto 30px;
+    }
+    .form{
+        width: 100%;
+        max-width: 30%;
+        margin: 0 auto;
+        @media(max-width: 1050px) {
+            max-width: 80%;
+        }
+        @media(max-width: 568px) {
+            max-width: 100%;
+        }
+        .forminator-ui{
+
+            *{
+                font-family: $f--heading;
+                color: rgba($c--black, .8) !important;
+            }
+
+                ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                    color: rgba($c--black, .8);
+                }
+                ::-moz-placeholder { /* Firefox 19+ */
+                    color: rgba($c--black, .8);
+                }
+                :-ms-input-placeholder { /* IE 10+ */
+                    color: rgba($c--black, .8);
+                }
+                :-moz-placeholder { /* Firefox 18- */
+                    color: rgba($c--black, .8);
+                }
+
+            input, select, textarea{
+                padding: 15px 20px !important;
+                background-color: rgba($c--primary, 0.1);
+                border-radius: 10px !important;
+            }
+
+            .select2-selection{
+                padding: 3px 0px 3px 15px !important;
+                background-color: rgba($c--primary, 0.1) !important;
+                border-radius: 10px !important;
+                border: none !important;
+                color: rgba($c--black, .3) !important;
+                font-size: 1.6rem !important;
+
+                span{
+                    margin: 0 !important;
+                    font-size: 1.6rem !important;
+
+                }
+                
+            }
+        }
+        .forminator-checkbox .forminator-checkbox-box{
+            width: 15px !important;
+            height: 15px !important;
+            flex: 0 0 15px !important;
+            margin-top: 2px !important;
+        }
+        .forminator-button-submit {
+            position: relative;
+            overflow: hidden;
+            padding: 15px 20px !important;
+            background-color: $c--primary !important;
+            border-radius: 10px !important;
+            border: none !important;
+            color: #fff !important;
+            cursor: pointer;
+            transition: color 0.3s, box-shadow 0.3s;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                width: 200%;
+                height: 200%;
+                background-color: #e94f37;
+                //border-radius: 50%;
+                transition: transform 0.5s ease;
+                z-index: -1;
+            }
+
+            &:hover {
+                color: #fff !important;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+                &::before {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+
+            z-index: 1;
+        }
+
+    }
+
+    &.contact-page{
+        .content{
+            max-width: 580px;
+            text-align: left;
+        }
+        .socials{
+            margin: 30px 0;
+            .social-icons{
+                display: flex;
+                gap: 10px;
+                i{
+                    font-size: 3rem;
+                }
+            }
+        }
+        .email-address{
+            p{
+                margin-bottom: 0;
+            }
+        }
+        .form{
+            max-width: 65%;
+            @media(max-width: 1050px) {
+                max-width: 80%;
+            }
+            @media(max-width: 568px) {
+                max-width: 100%;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 
 </main>
 
-        <footer>
+        <footer data-aos="fade">
 
             <div class="container">
                 <div class="row">
@@ -14,19 +14,19 @@
                         </div>
                         <div class="socials">
                             <div class="instagram">
-                                <a href="https://www.instagram.com/cristian_armeanu/" target="_blank" rel="noopener noreferrer" class="links">
+                                <a aria-label="Instagram" href="https://www.instagram.com/cristian_armeanu/" target="_blank" rel="noopener noreferrer" class="links">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
                             <div class="linkedin">
-                                <a href="https://www.linkedin.com/in/cristian-armeanu-018b23230/" target="_blank" rel="noopener noreferrer" class="links">
+                                <a aria-label="LinkedIn" href="https://www.linkedin.com/in/cristian-armeanu-018b23230/" target="_blank" rel="noopener noreferrer" class="links">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="email-address">
                             <p>Let's work together!</p>
-                            <a href="mailto:cristian@cristianarmeanu.com">cristian@cristianarmeanu.com</a>
+                            <a aria-label="Email" href="mailto:cristian@cristianarmeanu.com">cristian@cristianarmeanu.com</a>
                         </div>
                         <div class="footer-copyright">
                             <span>&copy; <?php echo date('Y'); ?> Cristian Armeanu. All rights reserved | Made with <span style="color:#e25555;">&hearts;</span></span>
@@ -37,7 +37,15 @@
                 </div>
             </div>
         </footer>
+        <div id="popup-overlay"></div>
 
+        <div id="popup-enquiry">
+            <button class="close-popup">X</button>
+            <div class="popup-header">
+                <h3>Let's Work Together</h3>
+            </div>
+            <?php echo do_shortcode('[forminator_form id="991"]'); ?>
+        </div>
         <?php wp_footer(); ?>
     </body>
 </html>

@@ -557,7 +557,7 @@ form .inputWrapper {
   top: 0;
   width: 100%;
   margin: 0 auto;
-  background: #232946;
+  background: transparent;
   /* semi-transparent blue, vezi ce nuanță vrei */
   /* backdrop-filter: blur(10px); efect modern de blur, opțional */
   color: #fff;
@@ -575,7 +575,7 @@ form .inputWrapper {
   }
 }
 #app-header .logo {
-  width: 100%;
+  width: 150px;
   transition: width 0.3s ease;
 }
 @media (max-width: 600px) {
@@ -672,12 +672,12 @@ form .inputWrapper {
 }
 @media (max-width: 992px) {
   #app-header .mobile-menu-toggle {
-    width: 5%;
+    width: 10%;
   }
 }
 @media (max-width: 568px) {
   #app-header .mobile-menu-toggle {
-    width: 12%;
+    width: 22%;
   }
 }
 @media (max-width: 992px) {
@@ -732,7 +732,6 @@ form .inputWrapper {
   text-align: center;
   min-height: 100vh;
   background: radial-gradient(circle, #353877 60%, #232946 100%);
-  animation: fadeIn 0.7s;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -912,6 +911,163 @@ footer .email-address p, footer .email-address a {
 }
 footer .footer-copyright span {
   font-size: 1.2rem;
+}
+
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* From https://css.glass */
+  background: rgba(24, 26, 32, 0.54);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.1px);
+  -webkit-backdrop-filter: blur(10.1px);
+  border: 1px solid rgba(24, 26, 32, 0.3);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.forminator-ui#forminator-module-991.forminator-design--default .forminator-checkbox__label p {
+  font-size: 12px !important;
+}
+
+#popup-enquiry {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  /* From https://css.glass */
+  background: rgb(35, 41, 70);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.1px);
+  -webkit-backdrop-filter: blur(10.1px);
+  border: 1px solid rgba(35, 41, 70, 0.3);
+  border-radius: 12px;
+  max-width: 560px;
+  width: 90%;
+  padding: 30px;
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+#popup-enquiry .forminator-ui#forminator-module-991.forminator-design--default .forminator-consent input:checked + .forminator-checkbox-box {
+  background-color: #e94f37 !important;
+  border-color: #e94f37 !important;
+}
+#popup-enquiry .forminator-ui .forminator-checkbox__label {
+  font-size: 12px !important;
+}
+#popup-enquiry .forminator-ui * {
+  font-family: "Space Grotesk", sans-serif;
+  color: white !important;
+}
+#popup-enquiry .forminator-ui * ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: white;
+}
+#popup-enquiry .forminator-ui * ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+#popup-enquiry .forminator-ui * :-ms-input-placeholder {
+  /* IE 10+ */
+  color: white;
+}
+#popup-enquiry .forminator-ui * :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+#popup-enquiry .forminator-ui input, #popup-enquiry .forminator-ui select, #popup-enquiry .forminator-ui textarea {
+  padding: 15px 20px !important;
+  background-color: rgba(24, 26, 32, 0.4);
+  border-radius: 10px !important;
+  border: none !important;
+}
+#popup-enquiry .forminator-ui .select2-selection {
+  padding: 5px 0px 5px 15px !important;
+  background-color: rgba(24, 26, 32, 0.4) !important;
+  border-radius: 10px !important;
+  border: none !important;
+  font-size: 1.6rem !important;
+}
+#popup-enquiry .forminator-ui .select2-selection span {
+  margin: 0 !important;
+  font-size: 1.6rem !important;
+}
+#popup-enquiry .forminator-checkbox .forminator-checkbox-box {
+  width: 15px !important;
+  height: 15px !important;
+  flex: 0 0 15px !important;
+  margin-top: 2px !important;
+  font-size: 12px !important;
+}
+#popup-enquiry .forminator-button-submit {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 20px !important;
+  background-color: #e94f37 !important;
+  border-radius: 10px !important;
+  border: none !important;
+  color: #fff !important;
+  cursor: pointer;
+  transition: color 0.3s, box-shadow 0.3s, background 0.3s;
+  z-index: 1;
+}
+#popup-enquiry .forminator-button-submit::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 200%;
+  height: 200%;
+  background-color: #FFF;
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+#popup-enquiry .forminator-button-submit:hover {
+  color: #181a20 !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+#popup-enquiry .forminator-button-submit:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header h3, .popup-header p {
+  color: #FFF;
+}
+
+#popup-enquiry.active,
+#popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#popup-enquiry.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#popup-enquiry .close-popup {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: none;
+  padding: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  transition: color 0.2s;
+}
+
+#popup-enquiry .close-popup:hover {
+  color: #181a20;
 }
 
 form legend {
@@ -1528,6 +1684,137 @@ main .wpforms-confirmation-container-full p strong {
     bottom: -12px;
   }
 }
+.block--contact {
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+}
+.block--contact .content {
+  text-align: center;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 30px;
+}
+.block--contact .form {
+  width: 100%;
+  max-width: 30%;
+  margin: 0 auto;
+}
+@media (max-width: 1050px) {
+  .block--contact .form {
+    max-width: 80%;
+  }
+}
+@media (max-width: 568px) {
+  .block--contact .form {
+    max-width: 100%;
+  }
+}
+.block--contact .form .forminator-ui * {
+  font-family: "Space Grotesk", sans-serif;
+  color: rgba(24, 26, 32, 0.8) !important;
+}
+.block--contact .form .forminator-ui ::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(24, 26, 32, 0.8);
+}
+.block--contact .form .forminator-ui ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(24, 26, 32, 0.8);
+}
+.block--contact .form .forminator-ui :-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgba(24, 26, 32, 0.8);
+}
+.block--contact .form .forminator-ui :-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(24, 26, 32, 0.8);
+}
+.block--contact .form .forminator-ui input, .block--contact .form .forminator-ui select, .block--contact .form .forminator-ui textarea {
+  padding: 15px 20px !important;
+  background-color: rgba(35, 41, 70, 0.1);
+  border-radius: 10px !important;
+}
+.block--contact .form .forminator-ui .select2-selection {
+  padding: 3px 0px 3px 15px !important;
+  background-color: rgba(35, 41, 70, 0.1) !important;
+  border-radius: 10px !important;
+  border: none !important;
+  color: rgba(24, 26, 32, 0.3) !important;
+  font-size: 1.6rem !important;
+}
+.block--contact .form .forminator-ui .select2-selection span {
+  margin: 0 !important;
+  font-size: 1.6rem !important;
+}
+.block--contact .form .forminator-checkbox .forminator-checkbox-box {
+  width: 15px !important;
+  height: 15px !important;
+  flex: 0 0 15px !important;
+  margin-top: 2px !important;
+}
+.block--contact .form .forminator-button-submit {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 20px !important;
+  background-color: #232946 !important;
+  border-radius: 10px !important;
+  border: none !important;
+  color: #fff !important;
+  cursor: pointer;
+  transition: color 0.3s, box-shadow 0.3s;
+  z-index: 1;
+}
+.block--contact .form .forminator-button-submit::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 200%;
+  height: 200%;
+  background-color: #e94f37;
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+.block--contact .form .forminator-button-submit:hover {
+  color: #fff !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.block--contact .form .forminator-button-submit:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.block--contact.contact-page .content {
+  max-width: 580px;
+  text-align: left;
+}
+.block--contact.contact-page .socials {
+  margin: 30px 0;
+}
+.block--contact.contact-page .socials .social-icons {
+  display: flex;
+  gap: 10px;
+}
+.block--contact.contact-page .socials .social-icons i {
+  font-size: 3rem;
+}
+.block--contact.contact-page .email-address p {
+  margin-bottom: 0;
+}
+.block--contact.contact-page .form {
+  max-width: 65%;
+}
+@media (max-width: 1050px) {
+  .block--contact.contact-page .form {
+    max-width: 80%;
+  }
+}
+@media (max-width: 568px) {
+  .block--contact.contact-page .form {
+    max-width: 100%;
+  }
+}
+
 .block--intro {
   overflow: hidden;
   position: relative;
@@ -1740,6 +2027,13 @@ main .wpforms-confirmation-container-full p strong {
   font-size: 1.6rem;
 }
 
+#block_687a7b70cd553 {
+  padding: 0;
+}
+#block_687a7b70cd553 .listing-wrapper {
+  padding: 0;
+}
+
 .block--content {
   position: relative;
   overflow: hidden;
@@ -1903,16 +2197,19 @@ main .wpforms-confirmation-container-full p strong {
 }
 
 .block--hero + .block--breadcrumbs {
-  margin-top: -24px;
+  margin-top: 0px;
 }
 
 .block--breadcrumbs {
-  padding: 26px 0 22px;
+  padding: 10px;
   color: rgba(24, 26, 32, 0.5);
   margin-bottom: 0;
   top: 132px;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 4;
+}
+.block--breadcrumbs span, .block--breadcrumbs a {
+  font-size: 1.2rem;
 }
 @media (max-width: 992px) {
   .block--breadcrumbs {
@@ -1965,7 +2262,7 @@ main .wpforms-confirmation-container-full p strong {
   opacity: 0.6;
 }
 .block--breadcrumbs i.fa-share-nodes {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   margin-left: 12px;
   cursor: pointer;
 }
@@ -2011,6 +2308,7 @@ main .wpforms-confirmation-container-full p strong {
   min-height: 100vh;
   text-align: center;
   flex-direction: column;
+  padding: 0 24px;
 }
 .block--hero .content-wrapper h1, .block--hero .content-wrapper p,
 .hero-slider .content-wrapper h1,
@@ -2019,7 +2317,7 @@ main .wpforms-confirmation-container-full p strong {
 .slider .content-wrapper p,
 .hero-slide .content-wrapper h1,
 .hero-slide .content-wrapper p {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 .block--hero .content-wrapper h1,
 .hero-slider .content-wrapper h1,
@@ -2052,7 +2350,7 @@ main .wpforms-confirmation-container-full p strong {
 .hero-slide .layer {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 9;
 }
 @media (max-width: 1050px) {

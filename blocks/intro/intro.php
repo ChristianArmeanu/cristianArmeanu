@@ -7,7 +7,7 @@
     $title = get_field('title');
 ?>
 
-<section id='<?php echo $block['id']; ?>' class='block--intro <?php echo $type; ?>'>
+<section id='<?php echo $block['id']; ?>' class='block--intro <?php echo $type; ?>' data-aos="fade">
     <div class="container">
         <div class="bg-color <?php echo $bgColor; ?>">
             <div class="row">
