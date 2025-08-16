@@ -19,7 +19,8 @@
                 "image": "Background Image",
                 "video": "Background Video",
                 "slider": "Slider with Images",
-                "video-slider": "Slider with Videos"
+                "video-slider": "Slider with Videos",
+                "no-bg": "No Background Selected"
             },
             "default_value": false,
             "allow_null": 0,
@@ -42,6 +43,13 @@
                         "field": "field_66ed41139d822",
                         "operator": "==",
                         "value": "image"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_66ed41139d822",
+                        "operator": "!=",
+                        "value": "no-bg"
                     }
                 ]
             ],
@@ -75,6 +83,13 @@
                         "operator": "==",
                         "value": "video"
                     }
+                ],
+                [
+                    {
+                        "field": "field_66ed41139d822",
+                        "operator": "!=",
+                        "value": "no-bg"
+                    }
                 ]
             ],
             "wrapper": {
@@ -101,6 +116,13 @@
                         "field": "field_66ed41139d822",
                         "operator": "==",
                         "value": "slider"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_66ed41139d822",
+                        "operator": "!=",
+                        "value": "no-bg"
                     }
                 ]
             ],
@@ -154,6 +176,13 @@
                         "field": "field_66ed41139d822",
                         "operator": "==",
                         "value": "video-slider"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_66ed41139d822",
+                        "operator": "!=",
+                        "value": "no-bg"
                     }
                 ]
             ],
@@ -247,5 +276,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1726825431
+    "modified": 1755355158
 }

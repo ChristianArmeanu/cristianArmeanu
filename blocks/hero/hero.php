@@ -141,3 +141,24 @@
         </div>
     </section>
 <?php endif; ?>
+
+<?php if ($type == 'no-bg'): ?>
+    <section id='<?php echo $block['id']; ?>' class='block--hero' data-aos="fade">
+
+        <div class="content-wrapper">
+            <div class="hero-content">
+                <?php echo $content; ?>
+            </div>
+
+            <?php
+                if (count($cta_array) > 0) {
+                    echo '<div class="cta--holder">';
+                    foreach ($cta_array as $cta)
+                        includeComponent('cta', true, array('text' => $cta['cta_text'], 'url' => $cta['cta_url'], 'icon' => $cta['cta_icon']));
+                    echo '</div>';
+                }
+            ?>
+        </div>
+
+    </section>
+<?php endif; ?>
