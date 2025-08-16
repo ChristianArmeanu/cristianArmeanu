@@ -12,6 +12,14 @@
         margin: 0 auto;
     }
 
+    ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: underline;
+    }
+
     .skills-wrapper {
         ul {
             display: flex;
@@ -37,11 +45,18 @@
         }
         &.secondary{
             background-color: $c--secondary;
-            h2{
+            h2, p, a{
                 color: $c--white;
+            }
+            a{
+                text-decoration: underline;
             }
         }
     }
 
 
+}
+
+#block_687a7b24cd552{
+    margin-top: 40px;
 }
