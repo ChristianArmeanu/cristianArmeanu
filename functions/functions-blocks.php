@@ -7,6 +7,7 @@
 function theme_acf_init() {
     if(function_exists('acf_register_block')){
         //[!GULP]
+		generateBlock( 'Custom-block', 'custom-block', 'This block will be built with different sections all in one block', '' );
 		generateBlock( 'Contact', 'contact', 'Contact block', '' );
 		generateBlock( 'Intro', 'intro', 'introduction block', '' );
 		generateBlock( 'Media', 'media', '', 'editor-video' );

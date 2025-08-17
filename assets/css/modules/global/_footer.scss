@@ -1,14 +1,25 @@
 @use 'config' as *;
 
 footer {
-    padding: 80px 0;
+    padding: 0px 0 80px;
     text-align: center;
-    background-color: $c--primary;
+    background-color: $c--black;
+    overflow: hidden;
+    position: relative;
+    .right{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
     @media (max-width: 992px){
         padding: 60px 0;
     }
     *{
         color: $c--white;
+    }
+
+    .container{
+        margin-top: 160px;
     }
 
     .footer-logo{
@@ -27,8 +38,9 @@ footer {
         i{
             font-size: 3rem;
             color: $c--secondary;
+            transition: color 0.3s ease;
             &:hover{
-                opacity: .8;
+                color: darken($c--secondary, 10%);
             }
         }
     }

@@ -26,16 +26,78 @@
     }
 
 
+    .socials{
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      i{
+        font-size: 2rem;
+        color: $c--white;
+        transition: color 0.3s ease;
+        &:hover{
+          color: $c--secondary;
+        }
+      }
+
+    }
+
     .logo{
       width: 150px;
-     // max-width: 150px;
+     //max-width: 150px;
       transition: width 0.3s ease;
       @media(max-width: 600px) {
         max-width: 100px; /* micșorăm logo-ul pe mobil */
       }
     }
 
-    .menu-header {
+    #menu-header{
+      li{
+        a{
+          font-family: $f--heading;
+          font-size: 1.6rem;
+          font-weight: bold;
+          color: $c--white;
+          transition: color 0.3s ease, text-decoration 0.3s ease;
+          &:hover{
+            color: $c--secondary;
+            opacity: 1;
+            text-decoration: none;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px; // depinde cât vrei spațiu sub text
+            width: 100%;
+            height: 2px; // grosimea liniei
+            background: $c--secondary;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: all 0.25s cubic-bezier(.4,0,.2,1);
+            border-radius: 2px;
+          }
+
+          &:hover::before,
+          &.active::before {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+        }
+        &.current_page_item{
+          a {
+            color: $c--white;
+            font-weight: bold;
+            &::before {
+              opacity: 1;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+
+    @media(max-width: 992px){
+    #menu-header {
         position: fixed;
         background-color: #232946;
         height: 100vh;
@@ -104,7 +166,7 @@
             }
         }
     }
-
+  
     .mobile-menu-toggle {
         display: flex;
         height: 43px;
@@ -169,6 +231,7 @@
             margin: 0;
         }
     }
+  }
 }
 
 

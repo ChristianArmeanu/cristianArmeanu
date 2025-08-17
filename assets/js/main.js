@@ -29,7 +29,7 @@ jQuery(function(){
   jQuery(".mobile-menu-toggle").on("click", function (e) {
     //e.preventDefault(); //
     jQuery(this).toggleClass("active");
-    jQuery(".menu-header").toggleClass("active");
+    jQuery("#menu-header").toggleClass("active");
     jQuery("body").toggleClass("menu-open");
   });
 
@@ -40,7 +40,7 @@ jQuery(function(){
     // Add a selector for the links in the menu, let's assume they have the CSS class '.menu-link'
     jQuery(".links").on("click", function () {
       jQuery(".mobile-menu-toggle").removeClass("active");
-      jQuery(".menu-header").removeClass("active");
+      jQuery("#menu-header").removeClass("active");
       jQuery("body").removeClass("menu-open");
     });
   }
@@ -112,7 +112,10 @@ jQuery(function(){
     });
   
     ////////////////////////////////
-})
+
+
+    // Custom project slider
+});
 
 
 // when scroll put background on nav
@@ -201,5 +204,93 @@ jQuery(document).ready(function($){
   function closeEnquiryPopup() {
     $('#popup-overlay').removeClass('active');
     $('#popup-enquiry').removeClass('active');
+  }
+});
+
+
+
+
+
+// Change the background image on listing-wrapper once you change the image on the slide
+
+
+jQuery(document).ready(function($) {
+  const $wrap = $(".project-section .listing-wrapper");
+  if (!$wrap.length) return;
+
+  // helperi
+  const withOverlay = (url) =>
+    `linear-gradient(rgba(0,0,0,.1), rgba(0,0,0, .1)), url('${url}')`;
+
+  const imgFromSlide = ($slide) =>
+    $slide.data("bg") || $slide.find("img").attr("src") || "";
+
+  // starea curentă: care layer e activ? ("a" sau "b")
+  let activeLayer = "a";
+
+  function setInitialBg(url){
+    // setează prima imagine pe layerul A și îl face vizibil
+    $wrap.css("--bg-a", withOverlay(url));
+    $wrap.removeClass("bg-b").addClass("bg-a");
+    activeLayer = "a";
+  }
+
+  function crossfadeTo(url){
+    if (!url) return;
+    // scriem pe layerul inactiv, apoi comutăm clasa pentru fade
+    if (activeLayer === "a"){
+      $wrap.css("--bg-b", withOverlay(url));
+      // trigger crossfade: A -> B
+      requestAnimationFrame(() => {
+        $wrap.removeClass("bg-a").addClass("bg-b");
+        activeLayer = "b";
+      });
+    } else {
+      $wrap.css("--bg-a", withOverlay(url));
+      // trigger crossfade: B -> A
+      requestAnimationFrame(() => {
+        $wrap.removeClass("bg-b").addClass("bg-a");
+        activeLayer = "a";
+      });
+    }
+  }
+
+  function setBgFromIndex(slick, index){
+    const $slide = $(slick.$slides[index]);
+    const url = imgFromSlide($slide);
+    if (!$wrap.hasClass("bg-a") && !$wrap.hasClass("bg-b")){
+      setInitialBg(url);
+    } else {
+      crossfadeTo(url);
+    }
+  }
+
+  // leagă-te de evenimentele Slick (init + afterChange)
+  $wrap.on("init", function (e, slick) {
+    setBgFromIndex(slick, slick.currentSlide);
+  });
+
+  $wrap.on("afterChange", function (e, slick, current) {
+    setBgFromIndex(slick, current);
+  });
+
+  // inițializează Slick (configul tău)
+  if (!$wrap.hasClass("slick-initialized")) {
+    $wrap.slick({
+      autoplay: false,
+      infinite: true,
+      dots: false,
+      arrows: true,
+      fade: true,
+      speed: 950,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+    });
+  } else {
+    // dacă era deja inițializat, setează imediat background-ul curent
+    const slick = $wrap.slick("getSlick");
+    setBgFromIndex(slick, slick.currentSlide);
   }
 });

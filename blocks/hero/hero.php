@@ -6,7 +6,7 @@
     $videoSlider = get_field('video_slider');
     $content = get_field('content');
     $cta_array = get_field('cta')['items'] ?: array();
-
+    $title = get_field('title');
 ?>
 
 <?php if ($slider): ?>
@@ -144,8 +144,13 @@
 
 <?php if ($type == 'no-bg'): ?>
     <section id='<?php echo $block['id']; ?>' class='block--hero' data-aos="fade">
-
+        
         <div class="content-wrapper">
+            <div class="hero-title">
+                <h1><?php echo $title; ?></h1>
+                <div class="custom-dashed-line" data-aos="fade"></div>
+
+            </div>
             <div class="hero-content">
                 <?php echo $content; ?>
             </div>
@@ -159,6 +164,7 @@
                 }
             ?>
         </div>
+        <img class="left" src="<?php echo get_template_directory_uri(); ?>/assets/img/left.png" alt="<?php echo get_bloginfo('name'); ?>"> 
 
     </section>
 <?php endif; ?>

@@ -20,6 +20,35 @@
     right: -4px;
   }
 }
+.block--custom-block {
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+.block--custom-block:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  z-index: 1;
+}
+.block--custom-block:after {
+  content: "Custom Block v1.0";
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+}
+
 .block--contact {
   position: relative;
   height: 100px;
@@ -32,7 +61,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--contact:after {
@@ -61,7 +90,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--intro:after {
@@ -90,7 +119,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--formal:after {
@@ -119,7 +148,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--media:after {
@@ -148,7 +177,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--listing:after {
@@ -177,7 +206,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--content:after {
@@ -206,7 +235,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--breadcrumbs:after {
@@ -235,7 +264,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #181a20;
+  background-color: #1c1c1c;
   z-index: 1;
 }
 .block--hero:after {

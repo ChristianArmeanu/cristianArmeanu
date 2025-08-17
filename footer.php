@@ -2,6 +2,7 @@
 </main>
 
         <footer data-aos="fade">
+        <img class="right" src="<?php echo get_template_directory_uri(); ?>/assets/img/right.png" alt="<?php echo get_bloginfo('name'); ?>"> 
 
             <div class="container">
                 <div class="row">
@@ -9,7 +10,7 @@
 
                         <div class="footer-logo">
                             <a href="<?php echo get_bloginfo('wpurl'); ?>" title="<?php echo get_bloginfo('name'); ?>">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cristian-logo-white.png" alt="<?php echo get_bloginfo('name'); ?>">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/new-logo.png" alt="<?php echo get_bloginfo('name'); ?>">
                             </a>
                         </div>
                         <div class="socials">

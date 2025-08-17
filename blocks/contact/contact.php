@@ -2,6 +2,7 @@
     $content = get_field('content');
     $form = get_field('form');
     $type = get_field('type');
+    $title = get_field('title');
 ?>
 
 <section id='<?php echo $block['id']; ?>' class='block--contact <?php echo $type; ?>'>
@@ -9,6 +10,12 @@
         <div class="row">
             <?php if($type == 'default') : ?>
             <div class="col-12">
+                <?php if($title) : ?>
+                    <div class="title">
+                        <h2><?php echo $title; ?></h2>
+                        <div class="custom-dashed-line" data-aos="fade"></div>
+                    </div>
+                <?php endif; ?>
                 <?php if( $content ) : ?>
                     <div class="content" data-aos="fade-up" data-aos-duration="1000">
                         <?php echo $content; ?>

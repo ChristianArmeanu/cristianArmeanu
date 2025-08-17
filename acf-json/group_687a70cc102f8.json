@@ -3,6 +3,25 @@
     "title": "Block - Contact",
     "fields": [
         {
+            "key": "field_68a19a8d54459",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_687a70e4cb389",
             "label": "Content",
             "name": "content",
@@ -83,5 +102,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1752858367
+    "modified": 1755421331
 }

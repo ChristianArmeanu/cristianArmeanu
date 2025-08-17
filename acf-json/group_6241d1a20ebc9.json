@@ -219,6 +219,33 @@
             ]
         },
         {
+            "key": "field_68a19991f9e71",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66ed41139d822",
+                        "operator": "==",
+                        "value": "no-bg"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6241d1ad5828b",
             "label": "Content",
             "name": "content",
@@ -276,5 +303,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1755355158
+    "modified": 1755421124
 }

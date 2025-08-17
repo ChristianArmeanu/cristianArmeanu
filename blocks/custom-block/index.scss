@@ -1,0 +1,212 @@
+@use '../../assets/css/config' as *; 
+
+.block--custom-block {
+
+    .about-section{
+        padding: 120px 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        .content-wrapper{
+            .title{
+                h2{
+                    color: $c--white;
+                }
+                .custom-dashed-line {
+                    width: 5%;
+                    border-bottom: 2px solid transparent;
+                    background: linear-gradient(to right, rgba($c--secondary, 1) 50%, transparent 50%) repeat-x;
+                    background-size: 16px 2px;
+                    margin: 0px 0 40px;
+                }
+            }
+            .content{
+                p, li, span, strong{
+                    color: $c--white;
+                }
+            }
+        }
+    }
+
+    .project-section{
+        position: relative;
+        overflow: hidden;
+        padding: 160px 0 0;
+        .right{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .left{
+            position: absolute;
+            bottom: 0;
+            
+        }
+        .content-wrapper{
+            position: relative;
+            .title{
+                h2{
+                    color: $c--white;
+                    width: 100%;
+                    max-width: 360px;
+                }
+                .custom-dashed-line {
+                    width: 5%;
+                    border-bottom: 2px solid transparent;
+                    background: linear-gradient(to right, rgba($c--secondary, 1) 50%, transparent 50%) repeat-x;
+                    background-size: 16px 2px;
+                    margin: 0px 0 40px;
+                }
+            }
+            .content{
+                p, li, span, strong{
+                    color: $c--white;
+                }
+            }
+        }
+
+        .listing-wrapper > * {
+            position: relative;
+            z-index: 1; /* conținutul rămâne peste */
+        }
+
+        .listing-wrapper{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 200px 0;
+            margin: 60px 0 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 14s ease, background 14s ease; /* tranziție rapidă */
+            overflow: hidden;
+            .portfolio-item {
+                padding: 0rem;
+                text-align: center;
+                position: relative;
+                padding-bottom: 0px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    transition: transform 0.15s ease-in-out;
+                }
+                .project-bg{
+                    transition: background 0.3s ease-in-out;
+                    .portfolio-content{
+                        strong, p{
+                            transition: color 0.3s ease-in-out;
+                        }
+                    }
+                }
+                .portfolio-item-inner{
+                    background: rgba($c--black, 1);
+                    border-radius: 1.2rem;
+                    border-bottom: 2px solid rgba(0,0,0,0.05);
+                    box-shadow: 0 2px 12px rgba(70,176,229,0.10);
+                    overflow: hidden;
+                    transition: background 0.3s ease-in-out;
+                    &:hover{
+                        background: rgba($c--secondary,1);
+                    
+                        .project-bg {
+                            a{
+                                text-decoration: none;
+                            }
+                        }
+                        .portfolio-content{
+                            strong, p, h3{
+                                color: $c--white;
+                            }
+
+                        }
+                        .portfolio-item-inner{
+                            img{
+                                transform: translateY(-8px) scale(1.04);
+                            }
+
+                        }
+                    }
+                }
+
+            }
+            .portfolio-item-inner {
+                @media(max-width: 600px) {
+                    p{
+                        padding: 0 2rem;
+                    }
+                }
+            }
+            .portfolio-item img {
+                width: 100%;
+                min-width: 900px;
+                max-width: 900px;
+                min-height: 400px;
+                max-height: 400px;
+                height: auto;
+                object-fit: cover;
+                /* border-radius: 0.9rem; */
+                margin-bottom: 1rem;
+            }
+            .portfolio-item{
+                .portfolio-content{
+                    padding: 2rem 0 6rem;
+                    h3 {
+                        margin-top: 0;
+                        font-size: 2rem;
+                        color: $c--secondary;
+                        margin-bottom: 0.5rem;
+                    }
+                    .description{
+                        color: $c--white;
+                        font-size: 1.6rem;
+                    }
+                    strong{
+                        color: $c--white;
+                    }
+                }
+            } 
+        }
+    }
+
+
+
+    /* Layerele de fundal */
+    .project-section .listing-wrapper::before,
+    .project-section .listing-wrapper::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;                /* pornesc invizibile */
+        transition: opacity 2s ease;
+        will-change: opacity;
+        z-index: 0;                /* sub conținut */
+        pointer-events: none;
+    }
+
+    /* Conținutul rămâne deasupra */
+    .project-section .listing-wrapper > *{
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Când e activ layerul A / B */
+    .project-section .listing-wrapper.bg-a::before{ opacity: .3; background-image: var(--bg-a); }
+    .project-section .listing-wrapper.bg-b::after { opacity: .3; background-image: var(--bg-b); }
+
+    /* reduce motion */
+    @media (prefers-reduced-motion: reduce){
+    .project-section .listing-wrapper::before,
+    .project-section .listing-wrapper::after{
+        transition: none !important;
+    }
+    }
+}

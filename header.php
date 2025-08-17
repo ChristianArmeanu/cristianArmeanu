@@ -25,25 +25,35 @@
         <header id="app-header">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-6 col-md-4">
-                    <a aria-label="Visit our Homepage" title="<?php echo get_bloginfo('name'); ?>" href="<?php echo get_bloginfo('wpurl'); ?>">
-                        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/cristian-logo-white.png" alt="<?php echo get_bloginfo('name'); ?>"> 
-                    </a>
+                    <div class="col-6 col-md-2">
+                        <a aria-label="Visit our Homepage" title="<?php echo get_bloginfo('name'); ?>" href="<?php echo get_bloginfo('wpurl'); ?>">
+                            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/new-logo.png" alt="<?php echo get_bloginfo('name'); ?>"> 
+                        </a>
 
                     </div>
-                    <div class="col-6 col-md-8 col-lg-8 col-xl-8 d-flex justify-content-end align-self-center">
-                    <div class="menu-header">
-                        <ul class="menu">
-                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>">Home</a></li>
-                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>/about">About</a></li>
-                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>/portfolio">Portfolio</a></li>
-                            <li><a class="links" href="<?php echo get_bloginfo('wpurl'); ?>/contact">Contact</a></li>
-                        </ul>
+                    <div class="col-6 col-md-10 col-lg-8 col-xl-8 d-flex justify-content-end justify-content-lg-center align-self-center">
+                    <?php wp_nav_menu(array('theme_location' => 'header-primary', 'walker' => new MainMenuPrimary())); ?>
+
+                        <div class="mobile-menu-toggle">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </div>
                     </div>
-                    <div class="mobile-menu-toggle">
-                        <span class="line line1"></span>
-                        <span class="line line2"></span>
-                        <span class="line line3"></span>
+                    <div class="col-6 col-md-2 d-none d-lg-flex justify-content-end align-self-center">
+                        <div class="socials">
+                            <div class="instagram">
+                                <a aria-label="Instagram" href="https://www.instagram.com/cristian_armeanu/" target="_blank" rel="noopener noreferrer" class="links">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="linkedin">
+                                <a aria-label="LinkedIn" href="https://www.linkedin.com/in/cristian-armeanu-018b23230/" target="_blank" rel="noopener noreferrer" class="links">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

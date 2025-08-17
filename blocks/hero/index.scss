@@ -7,7 +7,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #000;
   color: $c--white;
   position: relative;
   overflow: hidden;
@@ -19,6 +18,20 @@
 
   * {
     color: inherit;
+  }
+
+  .hero-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .custom-dashed-line {
+    width: 15%;
+    border-bottom: 2px solid transparent;
+    background: linear-gradient(to right, rgba($c--secondary, 1) 50%, transparent 50%) repeat-x;
+    background-size: 16px 2px;
+    margin: 0px 0 40px;
   }
 
   .content-wrapper{
@@ -42,13 +55,35 @@
     }
     p{
       width: 100%;
-      max-width: 660px;
+      max-width: 930px;
       margin: 0 auto;
     }
     @media(max-width: 1050px){
       max-height: 650px;
       min-height: 650px;
     }
+  }
+
+  .cta--holder{
+    .component--cta{
+      background-color: $c--white;
+      color: $c--secondary;
+      transition: color 0.3s ease-in-out;
+      font-weight: bold;
+      font-family: $f--heading;
+      span{
+        font-weight: bold;
+      }
+      &:hover{
+        color: $c--white;
+      }
+    }
+  }
+
+  .left{
+    position: absolute;
+    bottom: 0;
+    
   }
 
   .layer{
