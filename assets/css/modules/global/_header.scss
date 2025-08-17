@@ -75,6 +75,9 @@
             transform: scaleX(0);
             transition: all 0.25s cubic-bezier(.4,0,.2,1);
             border-radius: 2px;
+            @media(max-width: 992px) {
+              content: none;
+            }
           }
 
           &:hover::before,
@@ -99,7 +102,7 @@
     @media(max-width: 992px){
     #menu-header {
         position: fixed;
-        background-color: #232946;
+        background-color: $c--black;
         height: 100vh;
         width: 25vw;
         right: -100vw;
@@ -111,34 +114,24 @@
         transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out;
         overflow: hidden;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding-top: 25.8vh;
-        padding-left: 5vw;
+        justify-content: center;
+        align-items: center;
+        //padding-top: 25.8vh;
+        //padding-left: 5vw;
         @media(max-width: 1050px){
             width: 35vw;
         }
         @media (max-width: 992px) {
             width: 100%;
-            padding-top: 0vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         &.active {
             right: 0;
             top: 0;
             z-index: 999;
             opacity: 1;
-            @media (max-width: 992px) {
-            padding-top: 0vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            }
             .current-menu-item {
-            color: $c--secondary;
-            transform: translateX(10px);
+              color: $c--secondary;
+              transform: translateX(10px);
             }
         }
 
@@ -146,10 +139,7 @@
             margin: 0;
             width: 100%;
             border-right: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: start;
+            text-align: center;
             a {
                 font-family: $f--heading;
                 color: white;
@@ -197,12 +187,12 @@
             .line1 {
             transform: rotate(45deg);
             top: 1rem;
-            background: $c--secondary;
+            background: $c--white;
             }
             .line3 {
             transform: rotate(-45deg);
             top: -0.6rem;
-            background: $c--secondary;
+            background: $c--white;
             }
         }
 

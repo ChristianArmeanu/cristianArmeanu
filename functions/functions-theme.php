@@ -272,7 +272,7 @@ add_filter('wpseo_breadcrumb_single_link' ,'pine_remove_yoast_breadcrumb_link', 
 class MainMenuPrimary extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0){
        // if($depth === 0)
-		    $output .= '<li id="'.$item->ID.'" class="'.implode(' ', $item->classes).'"><a href="'.$item->url.'" class="menu-link">'. $item->title.'</a>';
+		    $output .= '<li id="'.$item->ID.'" class="'.implode(' ', $item->classes).'"><a href="'.$item->url.'" class="menu-link links">'. $item->title.'</a>';
 	}
 }
 

@@ -10,6 +10,13 @@ footer {
         position: absolute;
         top: 0;
         right: 0;
+        width: 105%;
+        @media(max-width: 992px) {
+            width: 1400px;
+        }
+        @media(max-width: 568px) {
+            width: 1200px;
+        }
     }
     @media (max-width: 992px){
         padding: 60px 0;
@@ -20,6 +27,9 @@ footer {
 
     .container{
         margin-top: 160px;
+        @media(max-width: 992px) {
+            margin-top: 80px;
+        }
     }
 
     .footer-logo{
@@ -58,6 +68,11 @@ footer {
     .footer-copyright{
         span{
             font-size: 1.2rem;
+        }
+        @media(max-width: 568px) {
+            width: 100%;
+            max-width: 210px;
+            margin: 0 auto;
         }
     }
 }
@@ -99,7 +114,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
     /* From https://css.glass */
-    background: rgba(35, 41, 70, 1);
+    background: rgba($c--black, 1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.1px);
@@ -146,14 +161,14 @@ footer {
 
             input, select, textarea{
                 padding: 15px 20px !important;
-                background-color: rgba($c--black, 0.4);
+                background-color: rgba($c--secondary, 0.2);
                 border-radius: 10px !important;
                 border: none !important;
             }
 
             .select2-selection{
                 padding: 5px 0px 5px 15px !important;
-                background-color: rgba($c--black, 0.4) !important;
+                background-color: rgba($c--secondary, 0.2) !important;
                 border-radius: 10px !important;
                 border: none !important;
                 font-size: 1.6rem !important;

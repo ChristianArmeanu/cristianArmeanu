@@ -26,18 +26,15 @@ AOS.init({
 
 jQuery(function(){
     
-  jQuery(".mobile-menu-toggle").on("click", function (e) {
-    //e.preventDefault(); //
+ // Toggle pentru mobile menu
+  jQuery(".mobile-menu-toggle").on("click", function () {
     jQuery(this).toggleClass("active");
     jQuery("#menu-header").toggleClass("active");
     jQuery("body").toggleClass("menu-open");
   });
 
-  // Verificați dacă lățimea ecranului este sub un anumit prag (de exemplu, 768px) pentru a decide dacă sunteți pe un dispozitiv mobil
-  // Verify if the screen width is below a certain threshold (e.g. 768px) to decide if you're on a mobile device
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    // Adăugați un selector pentru linkurile din meniu, să presupunem că au clasa CSS '.menu-link'
-    // Add a selector for the links in the menu, let's assume they have the CSS class '.menu-link'
+  // Dacă e sub 992px și se dă click pe un link, închidem meniul
+  if (window.matchMedia("(max-width: 992px)").matches) {
     jQuery(".links").on("click", function () {
       jQuery(".mobile-menu-toggle").removeClass("active");
       jQuery("#menu-header").removeClass("active");
@@ -45,9 +42,10 @@ jQuery(function(){
     });
   }
 
+  // Adaugă clasa current_page_item pe link-ul selectat
   jQuery(".menu a").on("click", function () {
-    jQuery(".menu a").removeClass("current-menu-item");
-    jQuery(this).addClass("current-menu-item");
+    jQuery(".menu li").removeClass("current_page_item"); // scoate de la toate
+    jQuery(this).parent("li").addClass("current_page_item"); // pune pe li-ul activ
   });
 
 
@@ -128,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollThreshold = isMobile ? 50 : 250;
 
     if (window.scrollY > scrollThreshold) {
-      nav.style.backgroundColor = '#232946';
+      nav.style.backgroundColor = '#111';
       logo.style.width = '100px'; // înălțimea nav-ului pe mobil
     } else {
       nav.style.backgroundColor = 'transparent';

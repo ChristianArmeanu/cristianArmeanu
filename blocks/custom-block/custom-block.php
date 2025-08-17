@@ -17,12 +17,12 @@ $projectSubcontent = get_field('project_subcontent');
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="content-wrapper">
-                        <div class="title">
+                    <div class="content-wrapper" >
+                        <div class="title" data-aos="fade-down">
                             <h2><?php echo $aboutTitle; ?></h2>
                             <div class="custom-dashed-line" data-aos="fade"></div>
                         </div>
-                        <div class="content">
+                        <div class="content" data-aos="fade-up">
                             <?php echo $aboutContent; ?>
                         </div>
                     </div>
@@ -37,18 +37,18 @@ $projectSubcontent = get_field('project_subcontent');
             <div class="row">
                 <div class="col-12">
                     <div class="content-wrapper">
-                        <div class="title">
+                        <div class="title" data-aos="fade-down">
                             <h2><?php echo $projectTitle; ?></h2>
                             <div class="custom-dashed-line" data-aos="fade"></div>
                         </div>
-                        <div class="content">
+                        <div class="content" data-aos="fade-up">
                             <?php echo $projectContent; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="listing-wrapper">
+        <div class="listing-wrapper" data-aos="fade-up">
             <?php
                 $args = array(
                     'post_type' => 'portfolio',

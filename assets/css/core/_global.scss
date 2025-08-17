@@ -9,32 +9,32 @@
 }
 
 html, body {
-	padding: 0;
-	margin: 0;
-	font-size: 10px;
-  background-color: $c--black;
-  line-height: 10px;
-  scroll-behavior: smooth;
-    // scrollbar styles width and color and background
-  // Parent selector (ex: body, .container, etc.)
-  &::-webkit-scrollbar {
-    width: 8px;
-    background: #f5f7fa; // Culoarea track-ului (fundalul)
-  }
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    background-color: $c--black;
+    line-height: 10px;
+    scroll-behavior: smooth;
+        // scrollbar styles width and color and background
+    // Parent selector (ex: body, .container, etc.)
+    &::-webkit-scrollbar {
+        width: 8px;
+        background: #f5f7fa; // Culoarea track-ului (fundalul)
+    }
 
-  &::-webkit-scrollbar-thumb {
-    background: #353877; // Culoarea barei efective (thumb)
-    border-radius: 6px;  // Rotunjire, opțional
-  }
+    &::-webkit-scrollbar-thumb {
+        background: $c--secondary; // Culoarea barei efective (thumb)
+        border-radius: 6px;  // Rotunjire, opțional
+    }
 
-  // Optional: border/hover efect
-  &::-webkit-scrollbar-thumb:hover {
-    background: #2a2d5e; // Un pic mai închis la hover, dacă vrei
-  }
+    // Optional: border/hover efect
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken($c--secondary, 10%); // Un pic mai închis la hover, dacă vrei
+    }
 
-  &::-webkit-scrollbar-track {
-    background: #f5f7fa; // Asigură că track-ul are culoarea dorită
-  }
+    &::-webkit-scrollbar-track {
+        background: #f5f7fa; // Asigură că track-ul are culoarea dorită
+    }
 }
 
 
@@ -138,30 +138,29 @@ main {
     }
     @media(max-width: 568px){
         top: unset;
-        bottom: -50px;
+        bottom: 0px;
         transform: translateY(0);
     }
     &.slick-prev {
         left: 400px;
         @media(max-width: 1480px){
-            left: 200px;
+            left: 100px;
         }
         @media(max-width: 1050px){
-            left: 40px;
+            left: unset;
         }
         @media(max-width: 568px){
             left: unset;
-            right: 40px;
         }
     }
 
     &.slick-next {
         right: 400px;
         @media(max-width: 1480px){
-            right: 200px;
+            right: 100px;
         }
         @media(max-width: 1050px){
-            right: 40px;
+            right: 0px;
         }
         @media(max-width: 568px){
             right: 0px;

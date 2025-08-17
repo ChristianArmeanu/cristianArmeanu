@@ -42,11 +42,11 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   background: #f5f7fa;
 }
 html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
-  background: #353877;
+  background: #e31c25;
   border-radius: 6px;
 }
 html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
-  background: #2a2d5e;
+  background: #b6161e;
 }
 html::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
   background: #f5f7fa;
@@ -150,7 +150,7 @@ main section {
 @media (max-width: 568px) {
   .slick-arrow {
     top: unset;
-    bottom: -50px;
+    bottom: 0px;
     transform: translateY(0);
   }
 }
@@ -159,18 +159,17 @@ main section {
 }
 @media (max-width: 1480px) {
   .slick-arrow.slick-prev {
-    left: 200px;
+    left: 100px;
   }
 }
 @media (max-width: 1050px) {
   .slick-arrow.slick-prev {
-    left: 40px;
+    left: unset;
   }
 }
 @media (max-width: 568px) {
   .slick-arrow.slick-prev {
     left: unset;
-    right: 40px;
   }
 }
 .slick-arrow.slick-next {
@@ -178,12 +177,12 @@ main section {
 }
 @media (max-width: 1480px) {
   .slick-arrow.slick-next {
-    right: 200px;
+    right: 100px;
   }
 }
 @media (max-width: 1050px) {
   .slick-arrow.slick-next {
-    right: 40px;
+    right: 0px;
   }
 }
 @media (max-width: 568px) {
@@ -685,6 +684,11 @@ form .inputWrapper {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
 }
+@media (max-width: 992px) {
+  #app-header #menu-header li a::before {
+    content: none;
+  }
+}
 #app-header #menu-header li a:hover::before, #app-header #menu-header li a.active::before {
   opacity: 1;
   transform: scaleX(1);
@@ -700,7 +704,7 @@ form .inputWrapper {
 @media (max-width: 992px) {
   #app-header #menu-header {
     position: fixed;
-    background-color: #232946;
+    background-color: #1c1c1c;
     height: 100vh;
     width: 25vw;
     right: -100vw;
@@ -712,10 +716,8 @@ form .inputWrapper {
     transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out;
     overflow: hidden;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 25.8vh;
-    padding-left: 5vw;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media (max-width: 992px) and (max-width: 1050px) {
@@ -726,10 +728,6 @@ form .inputWrapper {
 @media (max-width: 992px) and (max-width: 992px) {
   #app-header #menu-header {
     width: 100%;
-    padding-top: 0vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 @media (max-width: 992px) {
@@ -739,16 +737,6 @@ form .inputWrapper {
     z-index: 999;
     opacity: 1;
   }
-}
-@media (max-width: 992px) and (max-width: 992px) {
-  #app-header #menu-header.active {
-    padding-top: 0vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media (max-width: 992px) {
   #app-header #menu-header.active .current-menu-item {
     color: #e31c25;
     transform: translateX(10px);
@@ -759,10 +747,7 @@ form .inputWrapper {
     margin: 0;
     width: 100%;
     border-right: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: start;
+    text-align: center;
   }
   #app-header #menu-header li a {
     font-family: "Space Grotesk", sans-serif;
@@ -820,14 +805,14 @@ form .inputWrapper {
   #app-header .mobile-menu-toggle.active .line1 {
     transform: rotate(45deg);
     top: 1rem;
-    background: #e31c25;
+    background: #FFF;
   }
 }
 @media (max-width: 992px) {
   #app-header .mobile-menu-toggle.active .line3 {
     transform: rotate(-45deg);
     top: -0.6rem;
-    background: #e31c25;
+    background: #FFF;
   }
 }
 @media (max-width: 992px) {
@@ -1015,6 +1000,17 @@ footer .right {
   position: absolute;
   top: 0;
   right: 0;
+  width: 105%;
+}
+@media (max-width: 992px) {
+  footer .right {
+    width: 1400px;
+  }
+}
+@media (max-width: 568px) {
+  footer .right {
+    width: 1200px;
+  }
 }
 @media (max-width: 992px) {
   footer {
@@ -1026,6 +1022,11 @@ footer * {
 }
 footer .container {
   margin-top: 160px;
+}
+@media (max-width: 992px) {
+  footer .container {
+    margin-top: 80px;
+  }
 }
 footer .footer-logo img {
   width: 100%;
@@ -1058,6 +1059,13 @@ footer .email-address p, footer .email-address a {
 footer .footer-copyright span {
   font-size: 1.2rem;
 }
+@media (max-width: 568px) {
+  footer .footer-copyright {
+    width: 100%;
+    max-width: 210px;
+    margin: 0 auto;
+  }
+}
 
 #popup-overlay {
   position: fixed;
@@ -1087,7 +1095,7 @@ footer .footer-copyright span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
   /* From https://css.glass */
-  background: rgb(35, 41, 70);
+  background: #1c1c1c;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.1px);
@@ -1132,13 +1140,13 @@ footer .footer-copyright span {
 }
 #popup-enquiry .forminator-ui input, #popup-enquiry .forminator-ui select, #popup-enquiry .forminator-ui textarea {
   padding: 15px 20px !important;
-  background-color: rgba(28, 28, 28, 0.4);
+  background-color: rgba(227, 28, 37, 0.2);
   border-radius: 10px !important;
   border: none !important;
 }
 #popup-enquiry .forminator-ui .select2-selection {
   padding: 5px 0px 5px 15px !important;
-  background-color: rgba(28, 28, 28, 0.4) !important;
+  background-color: rgba(227, 28, 37, 0.2) !important;
   border-radius: 10px !important;
   border: none !important;
   font-size: 1.6rem !important;
@@ -1846,11 +1854,16 @@ main .wpforms-confirmation-container-full p strong {
   background-position: center;
   position: relative;
 }
+@media (max-width: 992px) {
+  .block--custom-block .about-section {
+    padding: 40px 0;
+  }
+}
 .block--custom-block .about-section .content-wrapper .title h2 {
   color: #FFF;
 }
 .block--custom-block .about-section .content-wrapper .title .custom-dashed-line {
-  width: 5%;
+  width: 75px;
   border-bottom: 2px solid transparent;
   background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
@@ -1868,10 +1881,32 @@ main .wpforms-confirmation-container-full p strong {
   position: absolute;
   top: 0;
   right: 0;
+  width: 105%;
+}
+@media (max-width: 992px) {
+  .block--custom-block .project-section .right {
+    width: 1400px;
+  }
+}
+@media (max-width: 568px) {
+  .block--custom-block .project-section .right {
+    width: 1200px;
+  }
 }
 .block--custom-block .project-section .left {
   position: absolute;
   bottom: 0;
+  width: 105%;
+}
+@media (max-width: 992px) {
+  .block--custom-block .project-section .left {
+    width: 1400px;
+  }
+}
+@media (max-width: 568px) {
+  .block--custom-block .project-section .left {
+    width: 1200px;
+  }
 }
 .block--custom-block .project-section .content-wrapper {
   position: relative;
@@ -1881,8 +1916,13 @@ main .wpforms-confirmation-container-full p strong {
   width: 100%;
   max-width: 360px;
 }
+@media (max-width: 568px) {
+  .block--custom-block .project-section .content-wrapper .title h2 {
+    max-width: 260px;
+  }
+}
 .block--custom-block .project-section .content-wrapper .title .custom-dashed-line {
-  width: 5%;
+  width: 75px;
   border-bottom: 2px solid transparent;
   background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
@@ -1906,9 +1946,14 @@ main .wpforms-confirmation-container-full p strong {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: opacity 14s ease, background 14s ease;
+  transition: opacity 0.4s ease, background 0.4s ease;
   /* tranziție rapidă */
   overflow: hidden;
+}
+@media (max-width: 568px) {
+  .block--custom-block .project-section .listing-wrapper {
+    padding: 150px 0;
+  }
 }
 .block--custom-block .project-section .listing-wrapper .portfolio-item {
   padding: 0rem;
@@ -1965,6 +2010,22 @@ main .wpforms-confirmation-container-full p strong {
   /* border-radius: 0.9rem; */
   margin-bottom: 1rem;
 }
+@media (max-width: 992px) {
+  .block--custom-block .project-section .listing-wrapper .portfolio-item img {
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 200px;
+    max-height: 270px;
+  }
+}
+@media (max-width: 568px) {
+  .block--custom-block .project-section .listing-wrapper .portfolio-item img {
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 115px;
+    max-height: 170px;
+  }
+}
 .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content {
   padding: 2rem 0 6rem;
 }
@@ -1974,9 +2035,19 @@ main .wpforms-confirmation-container-full p strong {
   color: #e31c25;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 568px) {
+  .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content h3 {
+    font-size: 1.6rem;
+  }
+}
 .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content .description {
   color: #FFF;
   font-size: 1.6rem;
+}
+@media (max-width: 568px) {
+  .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content .description {
+    font-size: 1.3rem;
+  }
 }
 .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content strong {
   color: #FFF;
@@ -2021,6 +2092,11 @@ main .wpforms-confirmation-container-full p strong {
   overflow: hidden;
   position: relative;
 }
+@media (max-width: 992px) {
+  .block--contact {
+    padding: 60px 0;
+  }
+}
 .block--contact .content {
   text-align: center;
   width: 100%;
@@ -2035,6 +2111,11 @@ main .wpforms-confirmation-container-full p strong {
   max-width: 100%;
   padding: 0;
 }
+@media (max-width: 992px) {
+  .block--contact .container {
+    padding: 0 24px;
+  }
+}
 .block--contact .title {
   text-align: center;
   display: flex;
@@ -2043,7 +2124,7 @@ main .wpforms-confirmation-container-full p strong {
   align-items: center;
 }
 .block--contact .title .custom-dashed-line {
-  width: 5%;
+  width: 75px;
   border-bottom: 2px solid transparent;
   background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
@@ -2660,14 +2741,9 @@ main .wpforms-confirmation-container-full p strong {
   overflow: hidden;
   height: 100vh;
   width: 100%;
-}
-@media (max-width: 1050px) {
-  .block--hero,
-.hero-slider,
-.slider,
-.hero-slide {
-    height: 650px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .block--hero *,
 .hero-slider *,
@@ -2688,7 +2764,7 @@ main .wpforms-confirmation-container-full p strong {
 .hero-slider .custom-dashed-line,
 .slider .custom-dashed-line,
 .hero-slide .custom-dashed-line {
-  width: 15%;
+  width: 105px;
   border-bottom: 2px solid transparent;
   background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
@@ -2771,6 +2847,7 @@ main .wpforms-confirmation-container-full p strong {
 .hero-slide .left {
   position: absolute;
   bottom: 0;
+  width: 105%;
 }
 .block--hero .layer,
 .hero-slider .layer,
