@@ -42,8 +42,8 @@
     }
 
     .logo{
-      width: 150px;
-     //max-width: 150px;
+      width: 100%;
+      max-width: 150px;
       transition: width 0.3s ease;
       @media(max-width: 600px) {
         max-width: 100px; /* micșorăm logo-ul pe mobil */
@@ -58,6 +58,7 @@
           font-weight: bold;
           color: $c--white;
           transition: color 0.3s ease, text-decoration 0.3s ease;
+          text-transform: uppercase;
           &:hover{
             color: $c--secondary;
             opacity: 1;
@@ -104,9 +105,9 @@
         position: fixed;
         background-color: $c--black;
         height: 100vh;
-        width: 25vw;
+        width: 100vw;
         right: -100vw;
-        top: 0;
+        top: -10px;
         opacity: 0;
         z-index: 999;
         display: flex;
@@ -118,15 +119,15 @@
         align-items: center;
         //padding-top: 25.8vh;
         //padding-left: 5vw;
-        @media(max-width: 1050px){
-            width: 35vw;
-        }
-        @media (max-width: 992px) {
-            width: 100%;
-        }
+        // @media(max-width: 1050px){
+        //     width: 35vw;
+        // }
+        // @media (max-width: 992px) {
+        //     width: 100%;
+        // }
         &.active {
-            right: 0;
-            top: 0;
+            right: -10px;
+            top: -10px;
             z-index: 999;
             opacity: 1;
             .current-menu-item {
@@ -240,7 +241,7 @@
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  background: radial-gradient(circle, #353877 60%, #232946 100%);
+  background: radial-gradient(circle, $c--black 60%, #7b1e1e 100%);
   //animation: fadeIn 0.7s;
   position: fixed;
   width: 100vw;
@@ -257,12 +258,15 @@
   animation: popIn 0.7s cubic-bezier(.6,2,.6,1);
   img{
     width: 100%;
-    max-width: 250px;
+    max-width: 298px;
+    min-width: 298px;
     @media(max-width: 992px) {
       max-width: 200px; /* micșorăm logo-ul pe tabletă */
+      min-width: 200px;
     }
     @media(max-width: 600px) {
       max-width: 150px; /* micșorăm logo-ul pe mobil */
+      min-width: 150px;
     }
   }
 }

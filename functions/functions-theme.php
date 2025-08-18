@@ -25,7 +25,7 @@ function setup_scripts() {
     wp_enqueue_style('slick-css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
     wp_enqueue_style('aos-css', '//unpkg.com/aos@2.3.1/dist/aos.css');
     
-	wp_enqueue_style('custom-css', $assets['build'] . 'main.min.css');
+	wp_enqueue_style('custom-css', $assets['build'] . 'main.min.css', array(), microtime(), 'all');
     
     
     // Localize site directory data and nonce to javascript

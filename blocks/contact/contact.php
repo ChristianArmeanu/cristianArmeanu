@@ -13,7 +13,7 @@
                 <?php if($title) : ?>
                     <div class="title" data-aos="fade-down">
                         <h2><?php echo $title; ?></h2>
-                        <div class="custom-dashed-line" data-aos="fade"></div>
+                        <div class="custom-dashed-line"></div>
                     </div>
                 <?php endif; ?>
                 <?php if( $content ) : ?>

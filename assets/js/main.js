@@ -13,7 +13,7 @@ AOS.init({
   
 
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 0, // offset (in px) from the original trigger point
+  offset: 100, // offset (in px) from the original trigger point
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 1000, // values from 0 to 3000, with step 50ms
   easing: 'ease-in-out-cubic', // default easing for AOS animations
@@ -212,22 +212,19 @@ jQuery(document).ready(function($){
 // Change the background image on listing-wrapper once you change the image on the slide
 
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
   const $wrap = $(".project-section .listing-wrapper");
   if (!$wrap.length) return;
 
-  // helperi
   const withOverlay = (url) =>
-    `linear-gradient(rgba(0,0,0,.1), rgba(0,0,0, .1)), url('${url}')`;
+    `linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url('${url}')`;
 
   const imgFromSlide = ($slide) =>
     $slide.data("bg") || $slide.find("img").attr("src") || "";
 
-  // starea curentă: care layer e activ? ("a" sau "b")
   let activeLayer = "a";
 
   function setInitialBg(url){
-    // setează prima imagine pe layerul A și îl face vizibil
     $wrap.css("--bg-a", withOverlay(url));
     $wrap.removeClass("bg-b").addClass("bg-a");
     activeLayer = "a";
@@ -235,17 +232,15 @@ jQuery(document).ready(function($) {
 
   function crossfadeTo(url){
     if (!url) return;
-    // scriem pe layerul inactiv, apoi comutăm clasa pentru fade
     if (activeLayer === "a"){
       $wrap.css("--bg-b", withOverlay(url));
-      // trigger crossfade: A -> B
+      // comutăm imediat la beforeChange, în același frame
       requestAnimationFrame(() => {
         $wrap.removeClass("bg-a").addClass("bg-b");
         activeLayer = "b";
       });
     } else {
       $wrap.css("--bg-a", withOverlay(url));
-      // trigger crossfade: B -> A
       requestAnimationFrame(() => {
         $wrap.removeClass("bg-b").addClass("bg-a");
         activeLayer = "a";
@@ -253,26 +248,17 @@ jQuery(document).ready(function($) {
     }
   }
 
-  function setBgFromIndex(slick, index){
+  function setBgFromIndex(slick, index, immediate = false){
     const $slide = $(slick.$slides[index]);
     const url = imgFromSlide($slide);
-    if (!$wrap.hasClass("bg-a") && !$wrap.hasClass("bg-b")){
+    if (immediate || (!$wrap.hasClass("bg-a") && !$wrap.hasClass("bg-b"))){
       setInitialBg(url);
     } else {
       crossfadeTo(url);
     }
   }
 
-  // leagă-te de evenimentele Slick (init + afterChange)
-  $wrap.on("init", function (e, slick) {
-    setBgFromIndex(slick, slick.currentSlide);
-  });
-
-  $wrap.on("afterChange", function (e, slick, current) {
-    setBgFromIndex(slick, current);
-  });
-
-  // inițializează Slick (configul tău)
+  // inițializează Slick
   if (!$wrap.hasClass("slick-initialized")) {
     $wrap.slick({
       autoplay: false,
@@ -280,15 +266,75 @@ jQuery(document).ready(function($) {
       dots: false,
       arrows: true,
       fade: true,
-      speed: 950,
+      speed: 950, // ține minte: acesta devine și durata fade-ului de bg
       slidesToShow: 1,
       slidesToScroll: 1,
-      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+      prevArrow:
+        '<button aria-label="Previous slide" type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+      nextArrow:
+        '<button aria-label="Next slide" type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
     });
-  } else {
-    // dacă era deja inițializat, setează imediat background-ul curent
-    const slick = $wrap.slick("getSlick");
-    setBgFromIndex(slick, slick.currentSlide);
   }
+
+  // sincronizează durata CSS cu slick.options.speed
+  const slick = $wrap.slick("getSlick");
+  $wrap.css("--bg-fade", `${slick.options.speed}ms`);
+
+  // preîncărcare imagini ca să nu existe delay la schimbare
+  slick.$slides.each(function () {
+    const url = imgFromSlide($(this));
+    if (!url) return;
+    const img = new Image();
+    img.src = url;
+  });
+
+  // la init: setează imediat imaginea pentru slide-ul curent
+  $wrap.on("init", function (e, sk) {
+    setBgFromIndex(sk, sk.currentSlide, true);
+  });
+
+  // sincronizare: comută background-ul în același timp cu fade-ul Slick
+  $wrap.on("beforeChange", function (e, sk, current, next) {
+    setBgFromIndex(sk, next);
+  });
+
+  // dacă era deja inițializat, setează imediat
+  if ($wrap.hasClass("slick-initialized")) {
+    setBgFromIndex(slick, slick.currentSlide, true);
+  }
+});
+
+
+
+jQuery(function ($) {
+  // repară asocierile label ↔ input pentru câmpurile de tip checkbox/consent
+  $('.forminator-ui .forminator-field').each(function () {
+    const $field = $(this);
+
+    // caută input-ul focusabil și labelul lui
+    const $input = $field.find('input, select, textarea').filter(':first');
+    const $label = $field.find('label').filter(':first');
+
+    if (!$input.length || !$label.length) return;
+
+    // generează ID dacă lipsește
+    if (!$input.attr('id')) {
+      $input.attr('id', 'fix_' + Math.random().toString(36).slice(2));
+    }
+
+    // leagă labelul de input
+    $label.attr('for', $input.attr('id'));
+
+    // nu ascunde labelul de la cititoarele de ecran
+    $label.removeAttr('aria-hidden');
+
+    // dacă există help text separat, leagă-l ca aria-describedby
+    const $help = $field.find('.forminator-description, .forminator-hint').first();
+    if ($help.length) {
+      if (!$help.attr('id')) {
+        $help.attr('id', 'desc_' + Math.random().toString(36).slice(2));
+      }
+      $input.attr('aria-describedby', $help.attr('id'));
+    }
+  });
 });

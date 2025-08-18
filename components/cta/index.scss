@@ -26,7 +26,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s, box-shadow 0.3s;
-
+    text-shadow: none;
     &::before {
         content: '';
         position: absolute;
@@ -71,5 +71,6 @@
         font-size: inherit;
         line-height: inherit;
         font-weight: bold;
+        text-shadow: none;
     }
 }

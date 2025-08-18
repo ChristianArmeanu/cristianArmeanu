@@ -42,11 +42,11 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   background: #f5f7fa;
 }
 html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
-  background: #e31c25;
+  background: #7b1e1e;
   border-radius: 6px;
 }
 html::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover {
-  background: #b6161e;
+  background: #521414;
 }
 html::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
   background: #f5f7fa;
@@ -81,7 +81,7 @@ td ul li {
 
 @media (min-width: 1400px) {
   .container {
-    max-width: 1860px;
+    max-width: 1680px;
     padding: 0 48px;
   }
 }
@@ -136,7 +136,7 @@ main section {
   padding: 0;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #e31c25;
+  color: #FFF;
   width: fit-content;
   padding: 20px;
   border: none;
@@ -145,7 +145,7 @@ main section {
   font-size: 3rem;
 }
 .slick-arrow:hover, .slick-arrow:focus {
-  color: #FFF;
+  color: #7b1e1e;
 }
 @media (max-width: 568px) {
   .slick-arrow {
@@ -228,7 +228,7 @@ main section {
 }
 
 a {
-  color: #e31c25;
+  color: #7b1e1e;
   text-decoration: none;
   transition: all 0.15s ease-out;
   position: relative;
@@ -249,7 +249,7 @@ a:not(.button):not(.component--cta):not(.menu-link):hover:after {
   animation-name: slideAcross;
 }
 a:hover {
-  color: #e31c25;
+  color: #7b1e1e;
 }
 
 @keyframes slideAcross {
@@ -278,19 +278,23 @@ p, li, span, small, a, blockquote, td, address {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   font-weight: 300;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 
 p, li, span, small, blockquote, td, address, strong {
   color: #1c1c1c;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 
 h1 {
   font-size: 4.8rem;
   margin-bottom: 36px;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
+  text-transform: uppercase;
 }
 @media (max-width: 768px) {
   h1 {
-    font-size: 8vw;
+    font-size: 6vw;
     line-height: 1.4;
   }
 }
@@ -303,9 +307,10 @@ h1 {
 h2 {
   font-size: 3.8rem;
   margin-bottom: 24px;
-  color: #e31c25;
+  color: #7b1e1e;
   font-weight: bold;
   text-transform: uppercase;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 @media (max-width: 768px) {
   h2 {
@@ -323,6 +328,7 @@ h3 {
   font-size: 3.2rem;
   margin-bottom: 12px;
   line-height: 1.4;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 @media (max-width: 768px) {
   h3 {
@@ -338,6 +344,7 @@ h3 {
 h4, h5, h6 {
   font-size: 1.8rem;
   margin-bottom: 12px;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 
 p + h2,
@@ -352,6 +359,7 @@ ul + h4 {
 p, li, a, span, blockquote, address {
   font-size: 1.8rem;
   margin-bottom: 12px;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 @media (max-width: 568px) {
   p, li, a, span, blockquote, address {
@@ -647,10 +655,11 @@ form .inputWrapper {
   transition: color 0.3s ease;
 }
 #app-header .socials i:hover {
-  color: #e31c25;
+  color: #7b1e1e;
 }
 #app-header .logo {
-  width: 150px;
+  width: 100%;
+  max-width: 150px;
   transition: width 0.3s ease;
 }
 @media (max-width: 600px) {
@@ -665,9 +674,10 @@ form .inputWrapper {
   font-weight: bold;
   color: #FFF;
   transition: color 0.3s ease, text-decoration 0.3s ease;
+  text-transform: uppercase;
 }
 #app-header #menu-header li a:hover {
-  color: #e31c25;
+  color: #7b1e1e;
   opacity: 1;
   text-decoration: none;
 }
@@ -678,7 +688,7 @@ form .inputWrapper {
   bottom: -8px;
   width: 100%;
   height: 2px;
-  background: #e31c25;
+  background: #7b1e1e;
   opacity: 0;
   transform: scaleX(0);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -706,9 +716,9 @@ form .inputWrapper {
     position: fixed;
     background-color: #1c1c1c;
     height: 100vh;
-    width: 25vw;
+    width: 100vw;
     right: -100vw;
-    top: 0;
+    top: -10px;
     opacity: 0;
     z-index: 999;
     display: flex;
@@ -719,30 +729,16 @@ form .inputWrapper {
     justify-content: center;
     align-items: center;
   }
-}
-@media (max-width: 992px) and (max-width: 1050px) {
-  #app-header #menu-header {
-    width: 35vw;
-  }
-}
-@media (max-width: 992px) and (max-width: 992px) {
-  #app-header #menu-header {
-    width: 100%;
-  }
-}
-@media (max-width: 992px) {
   #app-header #menu-header.active {
-    right: 0;
-    top: 0;
+    right: -10px;
+    top: -10px;
     z-index: 999;
     opacity: 1;
   }
   #app-header #menu-header.active .current-menu-item {
-    color: #e31c25;
+    color: #7b1e1e;
     transform: translateX(10px);
   }
-}
-@media (max-width: 992px) {
   #app-header #menu-header li {
     margin: 0;
     width: 100%;
@@ -759,12 +755,10 @@ form .inputWrapper {
     transition: transform 0.3s ease, color 0.3s ease;
   }
   #app-header #menu-header li a:hover {
-    color: #e31c25;
+    color: #7b1e1e;
     transform: translateX(10px);
     text-decoration: none;
   }
-}
-@media (max-width: 992px) {
   #app-header .mobile-menu-toggle {
     display: flex;
     height: 43px;
@@ -851,7 +845,7 @@ form .inputWrapper {
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  background: radial-gradient(circle, #353877 60%, #232946 100%);
+  background: radial-gradient(circle, #1c1c1c 60%, #7b1e1e 100%);
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -873,18 +867,21 @@ form .inputWrapper {
 }
 .logo-intro img {
   width: 100%;
-  max-width: 250px;
+  max-width: 298px;
+  min-width: 298px;
 }
 @media (max-width: 992px) {
   .logo-intro img {
     max-width: 200px;
     /* micșorăm logo-ul pe tabletă */
+    min-width: 200px;
   }
 }
 @media (max-width: 600px) {
   .logo-intro img {
     max-width: 150px;
     /* micșorăm logo-ul pe mobil */
+    min-width: 150px;
   }
 }
 
@@ -901,7 +898,7 @@ form .inputWrapper {
 .intro-tagline {
   font-size: 1.6rem;
   font-weight: 400;
-  color: #e31c25;
+  color: #7b1e1e;
   letter-spacing: 1px;
   margin-bottom: 4.5rem;
   animation: fadeInUp 1.4s cubic-bezier(0.3, 2, 0.5, 1);
@@ -917,7 +914,7 @@ form .inputWrapper {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #e31c25;
+  background: #7b1e1e;
   opacity: 0.7;
   animation: bounce 1.3s infinite;
 }
@@ -1004,12 +1001,12 @@ footer .right {
 }
 @media (max-width: 992px) {
   footer .right {
-    width: 1400px;
+    width: 1100px;
   }
 }
 @media (max-width: 568px) {
   footer .right {
-    width: 1200px;
+    width: 800px;
   }
 }
 @media (max-width: 992px) {
@@ -1031,6 +1028,7 @@ footer .container {
 footer .footer-logo img {
   width: 100%;
   max-width: 170px;
+  min-width: 170px;
 }
 footer .socials {
   margin: 50px 0 20px;
@@ -1041,11 +1039,11 @@ footer .socials {
 }
 footer .socials i {
   font-size: 3rem;
-  color: #e31c25;
+  color: #7b1e1e;
   transition: color 0.3s ease;
 }
 footer .socials i:hover {
-  color: #b6161e;
+  color: #521414;
 }
 footer .email-address {
   margin-bottom: 40px;
@@ -1112,8 +1110,8 @@ footer .footer-copyright span {
   transition: all 0.3s ease;
 }
 #popup-enquiry .forminator-ui#forminator-module-991.forminator-design--default .forminator-consent input:checked + .forminator-checkbox-box {
-  background-color: #e31c25 !important;
-  border-color: #e31c25 !important;
+  background-color: #7b1e1e !important;
+  border-color: #7b1e1e !important;
 }
 #popup-enquiry .forminator-ui .forminator-checkbox__label {
   font-size: 12px !important;
@@ -1140,13 +1138,13 @@ footer .footer-copyright span {
 }
 #popup-enquiry .forminator-ui input, #popup-enquiry .forminator-ui select, #popup-enquiry .forminator-ui textarea {
   padding: 15px 20px !important;
-  background-color: rgba(227, 28, 37, 0.2);
+  background-color: rgba(123, 30, 30, 0.2);
   border-radius: 10px !important;
   border: none !important;
 }
 #popup-enquiry .forminator-ui .select2-selection {
   padding: 5px 0px 5px 15px !important;
-  background-color: rgba(227, 28, 37, 0.2) !important;
+  background-color: rgba(123, 30, 30, 0.2) !important;
   border-radius: 10px !important;
   border: none !important;
   font-size: 1.6rem !important;
@@ -1166,7 +1164,7 @@ footer .footer-copyright span {
   position: relative;
   overflow: hidden;
   padding: 15px 20px !important;
-  background-color: #e31c25 !important;
+  background-color: #7b1e1e !important;
   border-radius: 10px !important;
   border: none !important;
   color: #fff !important;
@@ -1680,6 +1678,7 @@ main .wpforms-confirmation-container-full p strong {
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s, box-shadow 0.3s;
+  text-shadow: none;
   position: relative;
   z-index: 1;
 }
@@ -1691,7 +1690,7 @@ main .wpforms-confirmation-container-full p strong {
   transform: translate(-50%, -50%) scale(0);
   width: 200%;
   height: 200%;
-  background-color: #e31c25;
+  background-color: #7b1e1e;
   transition: transform 0.5s ease;
   z-index: -1;
 }
@@ -1720,6 +1719,7 @@ main .wpforms-confirmation-container-full p strong {
   font-size: inherit;
   line-height: inherit;
   font-weight: bold;
+  text-shadow: none;
 }
 
 #cookie {
@@ -1842,8 +1842,9 @@ main .wpforms-confirmation-container-full p strong {
 }
 .block--custom-block {
   /* Layerele de fundal */
-  /* Conținutul rămâne deasupra */
-  /* Când e activ layerul A / B */
+  /* Layerele de fundal */
+  /* Conținutul deasupra */
+  /* A/B active */
   /* reduce motion */
 }
 .block--custom-block .about-section {
@@ -1865,7 +1866,7 @@ main .wpforms-confirmation-container-full p strong {
 .block--custom-block .about-section .content-wrapper .title .custom-dashed-line {
   width: 75px;
   border-bottom: 2px solid transparent;
-  background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
+  background: linear-gradient(to right, #7b1e1e 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
   margin: 0px 0 40px;
 }
@@ -1877,6 +1878,11 @@ main .wpforms-confirmation-container-full p strong {
   overflow: hidden;
   padding: 160px 0 0;
 }
+@media (max-width: 992px) {
+  .block--custom-block .project-section {
+    padding: 100px 0 0;
+  }
+}
 .block--custom-block .project-section .right {
   position: absolute;
   top: 0;
@@ -1885,31 +1891,50 @@ main .wpforms-confirmation-container-full p strong {
 }
 @media (max-width: 992px) {
   .block--custom-block .project-section .right {
-    width: 1400px;
+    width: 1100px;
   }
 }
 @media (max-width: 568px) {
   .block--custom-block .project-section .right {
-    width: 1200px;
+    width: 800px;
   }
+}
+.block--custom-block .project-section .subcontent {
+  position: absolute;
+  bottom: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 24px;
+}
+.block--custom-block .project-section .subcontent p {
+  color: #fff;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  text-shadow: 0 -1px 0px rgb(0, 0, 0);
 }
 .block--custom-block .project-section .left {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   width: 105%;
 }
 @media (max-width: 992px) {
   .block--custom-block .project-section .left {
-    width: 1400px;
+    width: 1100px;
   }
 }
 @media (max-width: 568px) {
   .block--custom-block .project-section .left {
-    width: 1200px;
+    width: 800px;
   }
 }
 .block--custom-block .project-section .content-wrapper {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .block--custom-block .project-section .content-wrapper .title h2 {
   color: #FFF;
@@ -1924,12 +1949,26 @@ main .wpforms-confirmation-container-full p strong {
 .block--custom-block .project-section .content-wrapper .title .custom-dashed-line {
   width: 75px;
   border-bottom: 2px solid transparent;
-  background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
+  background: linear-gradient(to right, #7b1e1e 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
   margin: 0px 0 40px;
 }
 .block--custom-block .project-section .content-wrapper .content p, .block--custom-block .project-section .content-wrapper .content li, .block--custom-block .project-section .content-wrapper .content span, .block--custom-block .project-section .content-wrapper .content strong {
   color: #FFF;
+}
+@media (max-width: 992px) {
+  .block--custom-block .project-section .content-wrapper {
+    align-items: flex-start;
+  }
+  .block--custom-block .project-section .content-wrapper .signature img {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+@media (max-width: 568px) {
+  .block--custom-block .project-section .content-wrapper .signature img {
+    display: none;
+  }
 }
 .block--custom-block .project-section .listing-wrapper > * {
   position: relative;
@@ -1941,7 +1980,7 @@ main .wpforms-confirmation-container-full p strong {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 200px 0;
+  padding: 260px 0;
   margin: 60px 0 0;
   background-size: cover;
   background-position: center;
@@ -1949,11 +1988,6 @@ main .wpforms-confirmation-container-full p strong {
   transition: opacity 0.4s ease, background 0.4s ease;
   /* tranziție rapidă */
   overflow: hidden;
-}
-@media (max-width: 568px) {
-  .block--custom-block .project-section .listing-wrapper {
-    padding: 150px 0;
-  }
 }
 .block--custom-block .project-section .listing-wrapper .portfolio-item {
   padding: 0rem;
@@ -1983,7 +2017,7 @@ main .wpforms-confirmation-container-full p strong {
   transition: background 0.3s ease-in-out;
 }
 .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-item-inner:hover {
-  background: #e31c25;
+  background: #7b1e1e;
 }
 .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-item-inner:hover .project-bg a {
   text-decoration: none;
@@ -2022,17 +2056,22 @@ main .wpforms-confirmation-container-full p strong {
   .block--custom-block .project-section .listing-wrapper .portfolio-item img {
     min-width: 200px;
     max-width: 300px;
-    min-height: 115px;
+    min-height: 170px;
     max-height: 170px;
   }
 }
 .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content {
   padding: 2rem 0 6rem;
 }
+@media (max-width: 568px) {
+  .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content {
+    padding: 2rem 0 2rem;
+  }
+}
 .block--custom-block .project-section .listing-wrapper .portfolio-item .portfolio-content h3 {
   margin-top: 0;
   font-size: 2rem;
-  color: #e31c25;
+  color: #7b1e1e;
   margin-bottom: 0.5rem;
 }
 @media (max-width: 568px) {
@@ -2061,11 +2100,10 @@ main .wpforms-confirmation-container-full p strong {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  /* pornesc invizibile */
-  transition: opacity 2s ease;
+  transition: opacity var(--bg-fade, 950ms) ease;
+  /* sincron cu Slick */
   will-change: opacity;
   z-index: 0;
-  /* sub conținut */
   pointer-events: none;
 }
 .block--custom-block .project-section .listing-wrapper > * {
@@ -2126,7 +2164,7 @@ main .wpforms-confirmation-container-full p strong {
 .block--contact .title .custom-dashed-line {
   width: 75px;
   border-bottom: 2px solid transparent;
-  background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
+  background: linear-gradient(to right, #7b1e1e 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
   margin: 0px 0 40px;
 }
@@ -2172,7 +2210,7 @@ main .wpforms-confirmation-container-full p strong {
 }
 .block--contact .form .forminator-ui input, .block--contact .form .forminator-ui select, .block--contact .form .forminator-ui textarea {
   padding: 15px 20px !important;
-  background-color: rgba(227, 28, 37, 0.2);
+  background-color: rgba(123, 30, 30, 0.2);
   border-radius: 10px !important;
   border: none !important;
 }
@@ -2180,7 +2218,7 @@ main .wpforms-confirmation-container-full p strong {
   padding: 15px 20px !important;
 }
 .block--contact .form .forminator-ui .select2-selection {
-  background-color: rgba(227, 28, 37, 0.2) !important;
+  background-color: rgba(123, 30, 30, 0.2) !important;
   border-radius: 10px !important;
   border: none !important;
   color: rgba(255, 255, 255, 0.3) !important;
@@ -2203,7 +2241,7 @@ main .wpforms-confirmation-container-full p strong {
   background-color: #FFF !important;
   border-radius: 10px !important;
   border: none !important;
-  color: #e31c25 !important;
+  color: #7b1e1e !important;
   font-weight: bold !important;
   cursor: pointer;
   transition: color 0.3s, box-shadow 0.3s;
@@ -2217,7 +2255,7 @@ main .wpforms-confirmation-container-full p strong {
   transform: translate(-50%, -50%) scale(0);
   width: 200%;
   height: 200%;
-  background-color: #e31c25;
+  background-color: #7b1e1e;
   transition: transform 0.5s ease;
   z-index: -1;
 }
@@ -2227,6 +2265,10 @@ main .wpforms-confirmation-container-full p strong {
 }
 .block--contact .form .forminator-button-submit:hover::before {
   transform: translate(-50%, -50%) scale(1);
+}
+.block--contact .grecaptcha-badge {
+  bottom: -35px !important;
+  right: -300px !important;
 }
 .block--contact.contact-page .content {
   max-width: 580px;
@@ -2260,7 +2302,7 @@ main .wpforms-confirmation-container-full p strong {
 }
 
 .forminator-ui#forminator-module-991.forminator-design--default .forminator-error-message {
-  background-color: #e31c25 !important;
+  background-color: #7b1e1e !important;
   color: #FFF !important;
 }
 
@@ -2305,7 +2347,7 @@ main .wpforms-confirmation-container-full p strong {
   background-color: #232946;
 }
 .block--intro .bg-color.secondary {
-  background-color: #e31c25;
+  background-color: #7b1e1e;
 }
 .block--intro .bg-color.secondary h2, .block--intro .bg-color.secondary p, .block--intro .bg-color.secondary a {
   color: #FFF;
@@ -2481,11 +2523,11 @@ main .wpforms-confirmation-container-full p strong {
 .block--listing .listing-wrapper .portfolio-item .portfolio-content h3 {
   margin-top: 0;
   font-size: 2rem;
-  color: #e31c25;
+  color: #7b1e1e;
   margin-bottom: 0.5rem;
 }
 .block--listing .listing-wrapper .portfolio-item .portfolio-content .description {
-  color: #e31c25;
+  color: #7b1e1e;
   font-size: 1.6rem;
 }
 
@@ -2760,13 +2802,21 @@ main .wpforms-confirmation-container-full p strong {
   justify-content: center;
   flex-direction: column;
 }
+@media (max-width: 992px) {
+  .block--hero .hero-title,
+.hero-slider .hero-title,
+.slider .hero-title,
+.hero-slide .hero-title {
+    padding: 40px 0 0;
+  }
+}
 .block--hero .custom-dashed-line,
 .hero-slider .custom-dashed-line,
 .slider .custom-dashed-line,
 .hero-slide .custom-dashed-line {
   width: 105px;
   border-bottom: 2px solid transparent;
-  background: linear-gradient(to right, #e31c25 50%, transparent 50%) repeat-x;
+  background: linear-gradient(to right, #7b1e1e 50%, transparent 50%) repeat-x;
   background-size: 16px 2px;
   margin: 0px 0 40px;
 }
@@ -2810,21 +2860,12 @@ main .wpforms-confirmation-container-full p strong {
   max-width: 930px;
   margin: 0 auto;
 }
-@media (max-width: 1050px) {
-  .block--hero .content-wrapper,
-.hero-slider .content-wrapper,
-.slider .content-wrapper,
-.hero-slide .content-wrapper {
-    max-height: 650px;
-    min-height: 650px;
-  }
-}
 .block--hero .cta--holder .component--cta,
 .hero-slider .cta--holder .component--cta,
 .slider .cta--holder .component--cta,
 .hero-slide .cta--holder .component--cta {
   background-color: #FFF;
-  color: #e31c25;
+  color: #7b1e1e;
   transition: color 0.3s ease-in-out;
   font-weight: bold;
   font-family: "Space Grotesk", sans-serif;
@@ -2849,6 +2890,22 @@ main .wpforms-confirmation-container-full p strong {
   bottom: 0;
   width: 105%;
 }
+@media (max-width: 992px) {
+  .block--hero .left,
+.hero-slider .left,
+.slider .left,
+.hero-slide .left {
+    width: 1400px;
+  }
+}
+@media (max-width: 568px) {
+  .block--hero .left,
+.hero-slider .left,
+.slider .left,
+.hero-slide .left {
+    width: 1200px;
+  }
+}
 .block--hero .layer,
 .hero-slider .layer,
 .slider .layer,
@@ -2857,14 +2914,6 @@ main .wpforms-confirmation-container-full p strong {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 9;
-}
-@media (max-width: 1050px) {
-  .block--hero .layer,
-.hero-slider .layer,
-.slider .layer,
-.hero-slide .layer {
-    height: 650px;
-  }
 }
 .block--hero.video video,
 .hero-slider.video video,
@@ -2924,12 +2973,6 @@ main .wpforms-confirmation-container-full p strong {
   min-height: 100vh;
   text-align: center;
   flex-direction: column;
-}
-@media (max-width: 1050px) {
-  .slider-1 .content-wrapper {
-    max-height: 650px;
-    min-height: 650px;
-  }
 }
 .slider-1 .content-wrapper h1 {
   text-align: left;

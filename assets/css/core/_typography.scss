@@ -56,19 +56,23 @@ p, li, span, small, a, blockquote, td, address {
     font-family: $f--body;
     line-height: 1.6;
     font-weight: 300;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
 }
 
 p, li,span, small, blockquote, td, address, strong{
     color: $c--black;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
+
 }
 
 
 h1 {
     font-size: 4.8rem;
     margin-bottom: 36px;
-
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
+    text-transform: uppercase;
     @media (max-width: 768px){
-        font-size: 8vw;
+        font-size: 6vw;
         line-height: 1.4;
     }
 
@@ -83,6 +87,8 @@ h2 {
     color: $c--secondary;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
+
     @media (max-width: 768px){
         font-size: 4.8vw;
         line-height: 1.6;
@@ -96,7 +102,8 @@ h3 {
     font-size: 3.2rem;
     margin-bottom: 12px; 
     line-height: 1.4;
-    
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
+
     @media (max-width: 768px){
         font-size: 4vw;
     }  
@@ -108,6 +115,8 @@ h3 {
 h4, h5, h6 { 
     font-size: 1.8rem; 
     margin-bottom: 12px;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
+
 }
 
 p + h2,
@@ -122,6 +131,7 @@ ul + h4 {
 p, li, a, span, blockquote, address {
     font-size: 1.8rem;    
     margin-bottom: 12px;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
 
     @media (max-width: 568px){
         font-size: 4vw;

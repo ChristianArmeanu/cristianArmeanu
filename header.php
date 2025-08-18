@@ -3,9 +3,23 @@
     <head>
         <meta charset="<?php bloginfo('charset'); ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="msapplication-TileColor" content="#072a3a" />
+        <meta name="msapplication-TileColor" content="#1c1c1c" />
         <link rel="icon" type="image/x-icon" href="<?php bloginfo('template_directory'); ?>/assets/img/favicon.ico">
      
+
+
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#1c1c1c">
+
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#1c1c1c">
+
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <!-- For iOS 15+ (Safari address bar color, needs a background on body) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +27,11 @@
 
         <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=62559ca480366d0019fc1aff&product=sop' async='async'></script>
         
+        <!-- Lenis Scroll -->
+        <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis/bundled/lenis.min.js"></script>
+
+<meta name="google-site-verification" content="4H7gn9eyq82t8z42YHqeb6kMYFgvqt7HsVXSLnE1h1g" />
+
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>

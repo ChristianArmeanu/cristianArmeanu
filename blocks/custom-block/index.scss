@@ -37,31 +37,55 @@
         position: relative;
         overflow: hidden;
         padding: 160px 0 0;
+        @media(max-width: 992px) {
+            padding: 100px 0 0;
+        }
         .right{
             position: absolute;
             top: 0;
             right: 0;
             width: 105%;
             @media(max-width: 992px) {
-                width: 1400px;
+                width: 1100px;
             }
             @media(max-width: 568px) {
-                width: 1200px;
+                width: 800px;
+            }
+        }
+
+        .subcontent{
+            position: absolute;
+            bottom: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 24px;
+            p{
+                color: #fff;
+                width: 100%;
+                max-width: 400px;
+                text-align: center;
+                text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
+
             }
         }
         .left{
             position: absolute;
-            bottom: 0;
+            bottom: -1px;
             width: 105%;
             @media(max-width: 992px) {
-                width: 1400px;
+                width: 1100px;
             }
             @media(max-width: 568px) {
-                width: 1200px;
+                width: 800px;
             }
         }
         .content-wrapper{
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             .title{
                 h2{
                     color: $c--white;
@@ -84,6 +108,20 @@
                     color: $c--white;
                 }
             }
+            @media(max-width: 992px) {
+                align-items: flex-start;
+                .signature {
+                    img{
+                        width: 100%;
+                        max-width: 200px;
+                    }
+                }
+            }
+            @media(max-width: 568px) {
+                .signature{
+                    img{display: none;}
+                }
+            }
         }
 
         .listing-wrapper > * {
@@ -96,16 +134,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 200px 0;
+            padding: 260px 0;
             margin: 60px 0 0;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             transition: opacity .4s ease, background .4s ease; /* tranziție rapidă */
             overflow: hidden;
-            @media(max-width: 568px) {
-                padding: 150px 0;
-            }
+            // @media(max-width: 568px) {
+            //     padding: 260px 0;
+            // }
             .portfolio-item {
                 padding: 0rem;
                 text-align: center;
@@ -183,13 +221,16 @@
                 @media(max-width: 568px) {
                     min-width: 200px;
                     max-width: 300px;
-                    min-height: 115px;
+                    min-height: 170px;
                     max-height: 170px;
                 }
             }
             .portfolio-item{
                 .portfolio-content{
                     padding: 2rem 0 6rem;
+                    @media(max-width: 568px) {
+                        padding: 2rem 0 2rem;
+                    }
                     h3 {
                         margin-top: 0;
                         font-size: 2rem;
@@ -217,36 +258,33 @@
 
 
     /* Layerele de fundal */
-    .project-section .listing-wrapper::before,
-    .project-section .listing-wrapper::after{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0;                /* pornesc invizibile */
-        transition: opacity 2s ease;
-        will-change: opacity;
-        z-index: 0;                /* sub conținut */
-        pointer-events: none;
-    }
+/* Layerele de fundal */
+.project-section .listing-wrapper::before,
+.project-section .listing-wrapper::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition: opacity var(--bg-fade, 950ms) ease; /* sincron cu Slick */
+  will-change:opacity;
+  z-index:0;
+  pointer-events:none;
+}
 
-    /* Conținutul rămâne deasupra */
-    .project-section .listing-wrapper > *{
-        position: relative;
-        z-index: 1;
-    }
+/* Conținutul deasupra */
+.project-section .listing-wrapper > *{ position:relative; z-index:1; }
 
-    /* Când e activ layerul A / B */
-    .project-section .listing-wrapper.bg-a::before{ opacity: .3; background-image: var(--bg-a); }
-    .project-section .listing-wrapper.bg-b::after { opacity: .3; background-image: var(--bg-b); }
+/* A/B active */
+.project-section .listing-wrapper.bg-a::before{ opacity:.3; background-image:var(--bg-a); }
+.project-section .listing-wrapper.bg-b::after { opacity:.3; background-image:var(--bg-b); }
 
-    /* reduce motion */
-    @media (prefers-reduced-motion: reduce){
-    .project-section .listing-wrapper::before,
-    .project-section .listing-wrapper::after{
-        transition: none !important;
-    }
-    }
+/* reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .project-section .listing-wrapper::before,
+  .project-section .listing-wrapper::after{ transition:none !important; }
+}
+
 }

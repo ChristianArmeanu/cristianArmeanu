@@ -9,7 +9,7 @@ $bgImage = get_field('background_image');
 $projectTitle = get_field('project_title');
 $projectContent = get_field('project_content');
 $projectSubcontent = get_field('project_subcontent');
-
+$projectSignature = get_field('project_signature');
 ?>
 
 <section id='<?php echo $block['id']; ?>' class='block--custom-block'>
@@ -18,9 +18,9 @@ $projectSubcontent = get_field('project_subcontent');
             <div class="row">
                 <div class="col-12">
                     <div class="content-wrapper" >
-                        <div class="title" data-aos="fade-down">
+                        <div class="title" data-aos="fade-right">
                             <h2><?php echo $aboutTitle; ?></h2>
-                            <div class="custom-dashed-line" data-aos="fade"></div>
+                            <div class="custom-dashed-line"></div>
                         </div>
                         <div class="content" data-aos="fade-up">
                             <?php echo $aboutContent; ?>
@@ -31,18 +31,24 @@ $projectSubcontent = get_field('project_subcontent');
         </div>
     </div>
     <div class="project-section" id="projects">
-        <img class="right" src="<?php echo get_template_directory_uri(); ?>/assets/img/right.png" alt="<?php echo get_bloginfo('name'); ?>">
+        <img data-aos="slide-left" class="right" src="<?php echo get_template_directory_uri(); ?>/assets/img/right.png" alt="<?php echo get_bloginfo('name'); ?>">
 
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="content-wrapper">
-                        <div class="title" data-aos="fade-down">
-                            <h2><?php echo $projectTitle; ?></h2>
-                            <div class="custom-dashed-line" data-aos="fade"></div>
+                        <div class="content-full">
+                            <div class="title" data-aos="fade-down">
+                                <h2><?php echo $projectTitle; ?></h2>
+                                <div class="custom-dashed-line"></div>
+                            </div>
+                            <div class="content" data-aos="fade-up">
+                                <?php echo $projectContent; ?>
+                            </div>
                         </div>
-                        <div class="content" data-aos="fade-up">
-                            <?php echo $projectContent; ?>
+
+                        <div class="signature" data-aos="fade-left">
+                            <img src="<?php echo esc_url($projectSignature['url']); ?>" alt="Signature">
                         </div>
                     </div>
                 </div>
@@ -92,11 +98,11 @@ $projectSubcontent = get_field('project_subcontent');
                 endif;
             ?>
         </div>
-        <img class="left" src="<?php echo get_template_directory_uri(); ?>/assets/img/left.png" alt="<?php echo get_bloginfo('name'); ?>"> 
-
         <div class="subcontent">
-            <p><?php echo $projectSubContent; ?></p>
+            <?php echo $projectSubcontent; ?>
         </div>
+        <img data-aos="slide-right" class="left" src="<?php echo get_template_directory_uri(); ?>/assets/img/left.png" alt="<?php echo get_bloginfo('name'); ?>">
+
     </div>
 
 </section>

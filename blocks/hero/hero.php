@@ -148,7 +148,7 @@
         <div class="content-wrapper">
             <div class="hero-title">
                 <h1><?php echo $title; ?></h1>
-                <div class="custom-dashed-line" data-aos="fade"></div>
+                <div class="custom-dashed-line"></div>
 
             </div>
             <div class="hero-content">
@@ -164,7 +164,7 @@
                 }
             ?>
         </div>
-        <img class="left" src="<?php echo get_template_directory_uri(); ?>/assets/img/left.png" alt="<?php echo get_bloginfo('name'); ?>"> 
+        <img data-aos="slide-right" class="left" src="<?php echo get_template_directory_uri(); ?>/assets/img/left.png" alt="<?php echo get_bloginfo('name'); ?>">
 
     </section>
 <?php endif; ?>
