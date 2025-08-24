@@ -1,20 +1,32 @@
 @use '../../assets/css/config' as *; 
 
-.block--formal {
-    padding: 96px 0;
+.block--formal{
+    width: 100%;
+    max-width: 860px;
+    margin: 160px auto 60px;
+
+
+    h1{
+        color: $c--white;
+    }
 
     h2 {
-        color: $c--black;
+        color: $c--secondary;
         margin: 0 0 12px;
+    }
+    h3{
+        color: $c--secondary;
     }
 
     p + h2 {
         margin-top: 72px;
     }
-    
 
+    p, li, span, strong {
+        color: $c--white;
+    }
     a {
-        color: $c--black;
+        color: $c--secondary;
         text-decoration: underline;
 
         &:hover {
@@ -33,4 +45,59 @@
         a { font-family: $f--heading; }
     }
 
+}
+
+
+.cmplz-document{
+    .wp-block-heading{
+        max-width: 860px;
+        color: #fff;
+        margin: 160px auto 36px;
+        @media(max-width: 992px) {
+            padding: 0 24px;
+        }
+    }
+    #cmplz-document {
+        width: 100%;
+        max-width: 860px;
+        margin: 0px auto;
+        @media(max-width: 992px) {
+            padding: 0 24px;
+        }
+         h2 {
+            color: $c--secondary;
+            margin: 0 0 12px;
+        }
+        h3{
+            color: $c--secondary;
+        }
+
+        p + h2 {
+            margin-top: 22px;
+        }
+
+        p, li, span, strong {
+            color: $c--white;
+        }
+        a {
+            color: $c--secondary;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        ul.links {
+            list-style-type: none;
+            position: sticky;
+            top: 200px;
+            
+            li {
+                margin: 0;
+            }
+            a { font-family: $f--heading; }
+        }
+
+    }
 }

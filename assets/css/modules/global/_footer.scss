@@ -25,6 +25,43 @@ footer {
         color: $c--white;
     }
 
+    .footer-menu-wrapper {
+        ul.menu {
+            li {
+            /* adu pseudo-elementul la aceeași mărime ca linkul */
+            font-size: 1.2rem; // sau pune doar pe ::before, vezi mai jos
+            margin: 0;
+            &:not(:first-of-type)::before {
+                content: '|';
+                font-size: inherit;     // se potrivește cu 1.2rem
+                line-height: 1;         // evită să pară mai înalt
+                opacity: .7;            // opțional, mai discret
+                padding: 0 6px;
+                vertical-align: middle; // aliniază pe bază
+            }
+            }
+
+            a {
+            position: relative;
+            font-size: 1.2rem;
+            &:after {
+                content: '';
+                height: 1px;
+                width: 100%;
+                max-width: 0;
+                background-color: $c--white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                transition: max-width .25s ease;
+            }
+            &:hover { color: $c--white; &:after { max-width: 100%; } }
+            }
+        }
+    }
+
+    
+
     .container{
         margin-top: 160px;
         @media(max-width: 992px) {
@@ -130,7 +167,9 @@ footer {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-
+    @media(max-width: 600px) {
+        padding: 30px 20px 0;
+    }
 
     .forminator-ui#forminator-module-991.forminator-design--default .forminator-consent input:checked + .forminator-checkbox-box{
         background-color: $c--secondary !important;
@@ -165,6 +204,10 @@ footer {
                 background-color: rgba($c--secondary, 0.2);
                 border-radius: 10px !important;
                 border: none !important;
+            }
+
+            textarea{
+                max-height: 100px;
             }
 
             .select2-selection{

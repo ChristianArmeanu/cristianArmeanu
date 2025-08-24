@@ -29,6 +29,10 @@
                             <p>Let's work together!</p>
                             <a aria-label="Email" href="mailto:cristian@cristianarmeanu.com">cristian@cristianarmeanu.com</a>
                         </div>
+                        <div class="footer-menu-wrapper" data-aos="fade-up" data-aos-offset="-300">
+                            <?php wp_nav_menu(array('theme_location' => 'footer-primary', 'walker' => new MainMenuPrimary())); ?>
+
+                        </div>
                         <div class="footer-copyright" data-aos="fade-up" data-aos-offset="-300">
                             <span>&copy; <?php echo date('Y'); ?> Cristian Armeanu. All rights reserved | Made with <span style="color:#e25555;">&hearts;</span></span>
                         </div>

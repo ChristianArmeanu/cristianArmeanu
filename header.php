@@ -20,17 +20,12 @@
 
         <!-- For iOS 15+ (Safari address bar color, needs a background on body) -->
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        <!-- GOOGLE FONTS -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
 
         <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=62559ca480366d0019fc1aff&product=sop' async='async'></script>
         
-        <!-- Lenis Scroll -->
-        <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis/bundled/lenis.min.js"></script>
 
-<meta name="google-site-verification" content="4H7gn9eyq82t8z42YHqeb6kMYFgvqt7HsVXSLnE1h1g" />
+        <meta name="google-site-verification" content="4H7gn9eyq82t8z42YHqeb6kMYFgvqt7HsVXSLnE1h1g" />
 
         <?php wp_head(); ?>
     </head>

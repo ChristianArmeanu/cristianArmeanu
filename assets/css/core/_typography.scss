@@ -71,6 +71,7 @@ h1 {
     margin-bottom: 36px;
     text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
     text-transform: uppercase;
+    font-size-adjust: 0.54;
     @media (max-width: 768px){
         font-size: 6vw;
         line-height: 1.4;
@@ -88,7 +89,7 @@ h2 {
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 0 -1px 0px rgba(0, 0, 0, 1);
-
+    font-size-adjust: 0.54;
     @media (max-width: 768px){
         font-size: 4.8vw;
         line-height: 1.6;
